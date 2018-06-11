@@ -21,6 +21,8 @@ $jQueryDataTables = TRUE;
 $bootDataTables = TRUE;
 
 
+
+
 /* Admin Style */
 $AdminCSS = FALSE;
 $adminJS = FALSE;

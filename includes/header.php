@@ -31,6 +31,7 @@
     <?php endif; ?>
 
 </head>
+
 <body>
 
 <?php if(!$removeNavCustomer): ?>

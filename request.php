@@ -9,6 +9,15 @@ function Login(){
     define("INFLEX", true);
     $output = array("status" => "OK");
     require_once('includes/database.php');
+    ini_set('session.cookie_lifetime', 1);
+    ini_set('session.cookie_httponly', 1);
+    ini_set('session.use_strict_mod', 1);
+    $lifetime = 3600;
+    session_set_cookie_params($lifetime);
+    session_start();
+    setcookie(session_name(), session_id(), time() + $lifetime);
+    session_regenerate_id();
+
     global $db;
 
     if (isset($_POST['email']) && isset($_POST['password']) && !empty($_POST['email']) && !empty($_POST['password'])) {
@@ -23,7 +32,8 @@ function Login(){
 
 
         if ($stmt->num_rows > 0) {
-            $input = "Ok";
+            $_SESSION['admin'] = $email;
+            $_SESSION['admin'] = $password;
         } else {
             returnError('Invalid username/password');
         }
