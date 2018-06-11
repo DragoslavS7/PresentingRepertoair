@@ -1,0 +1,545 @@
+/* Import fonts */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
+
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+/* Entypo */
+[class*="entypo-"]:before {
+    font-family: 'entypo', sans-serif;
+}
+
+* {
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+}
+
+body {
+    color: #797979;
+    background: #EEE;
+    font-family: 'Open Sans', sans-serif;
+    font-size:13px;
+    -webkit-overflow-scrolling: touch;
+    margin:0;
+}
+h3,h4,h5,h6 {
+    text-align: center;
+}
+
+
+/* Grid */
+
+* {
+    box-sizing: border-box;
+}
+.header {
+    border: 1px solid #fff;
+    padding: 15px;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+    border: 1px solid #fff;
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+
+a:link, a:visited, a:active {
+    color:#333;
+    text-decoration:none;
+}
+a:hover {
+    color:crimson;
+}
+::selection {
+    background: crimson;
+    color: #fff;
+}
+.wrapper {
+    width: 100%;
+    height: 100%;
+}
+header {
+    min-height:55px;
+    background:#343a40!important;
+    position:fixed;
+    left:0;
+    right:0;
+    z-index:1002;
+}
+/* NAVIGATION */
+nav {
+    width: 80px;
+    height: 100%;
+    position: fixed;
+    background: #b75633;
+    padding-top:85px;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    z-index:1003;
+}
+nav:after {
+    content:'';
+    position:absolute;
+    top:0;
+    width:100%;
+    height:55px;
+    background:#b75633;
+}
+nav ul {
+    position:relative;
+}
+nav ul li {
+    padding:10px;
+    cursor: pointer;
+    position:relative;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+}
+/* TEST NAV */
+nav ul li [class*="entypo-"] {
+    display: inline;
+    font-size: 15px;
+    position:relative;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+}
+nav ul .menu-item {
+    display:none;
+    padding-left:10px;
+    font-size:11px;
+    text-transform:uppercase;
+}
+nav:hover ul [class*="entypo-"] {
+    left:0;
+    font-size:15px;
+}
+/* TEST NAV END */
+nav ul li:hover {
+    background: crimson;
+}
+nav ul li:hover:before {
+    content: '';
+    border-color: transparent #EEE transparent transparent ;
+    right: 0;
+    border-width:10px;
+    position: absolute;
+    border-style: solid;
+    top: 8px;
+}
+nav a:link, nav a:visited, nav a:active, nav a:hover {
+    color:#EEE;
+}
+/* NAVIGATION SUB MENU */
+
+nav .subnav {
+    display:none;
+    background:#666;
+}
+nav .subnav li {
+    padding:10px;
+    font-size:10px;
+    text-transform:uppercase;
+}
+nav .subnav li:hover {
+    background: crimson;
+    border-left: 10px solid #B31131;
+}
+nav .subnav li:hover:before {
+    top: 6px;
+}
+nav .subnav li [class*="entypo-"] {
+    top:0;
+    left:0;
+    font-size:11px;
+}
+/* HEADER USERPANEL */
+
+header .userpanel{
+    width: 280px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 50px;
+    background: #343a40!important;
+    cursor: pointer;
+    z-index: 100;
+}
+header .userpanel .user {
+    width:100%;
+    height:100%;
+    position:relative;
+    text-align:center;
+    color:white;
+}
+header .userpanel .user > div:nth-child(-n+2) {
+    border-right: 2px solid #333;
+}
+header .userpanel .notification {
+    width:60px;
+    height:100%;
+    line-height:60px;
+    float:left;
+    display:block;
+    position:relative;
+}
+header .userpanel .notification [class*="entypo-"] {
+    font-size:17px;
+    margin-right:13px;
+}
+header .userpanel .notification .number {
+    width: 20px;
+    height: 20px;
+    background: #2890E6;
+    border-radius: 5px;
+    line-height: 20px;
+    position: absolute;
+    top: 12px;
+    right:14px;
+    z-index: -1;
+}
+header .userpanel .picture {
+    width:60px;
+    height:100%;
+    line-height:55px;
+    float:left;
+    display:block;
+    position:relative;
+}
+header .userpanel .picture img {
+    width:100%;
+    height:100%;
+    padding:5px;
+    border-radius:7px;
+    overflow:hidden;
+    filter: grayscale(0.8);
+    -webkit-filter: grayscale(0.8);
+}
+header .userpanel .picture img:hover {
+    filter: grayscale(0);
+    -webkit-filter: grayscale(0);
+}
+header .userpanel .name {
+    width:160px;
+    height:100%;
+    line-height:55px;
+    float:left;
+    display:block;
+    position:relative;
+    text-align:left;
+    padding:0 10px;
+}
+header .userpanel .name [class*="entypo-"] {
+    position: absolute;
+    font-size:20px;
+    right:15px;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+}
+header .userpanel .drop {
+    width:160px;
+    min-height:100px;
+    display:none;
+    position:absolute;
+    top:55px;
+    right:0;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background:#b75633;
+}
+header .userpanel .drop:before {
+    content:'';
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 9px solid #b75633;
+    left: 15px;
+    top:-8px;
+    position:absolute;
+}
+/* CONTENT */
+
+.main-content {
+    height: calc(100% - 55px);
+    margin-left:80px;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    text-align: center;
+}
+.container {
+    width: 100%;
+    height:100%;
+    display: inline-block;
+    margin-top: 55px;
+    padding: 15px;
+    background:#EEE;
+}
+.nav-hover {
+    width:150px;
+}
+.push {
+    margin-left:150px;
+}
+.arrow {
+    transform:rotate(180deg);
+    -webkit-transform:rotate(180deg);
+    -moz-transform:rotate(180deg);
+}
+.active {
+    background:#b75633!important;
+}
+
+/* Boxes */
+
+.sc-box{
+    background:#fff;
+    margin-top:15px;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+/* Button */
+.button {
+    padding: 6px;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #b75633;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    width:100%;
+}
+
+.button:hover {background-color: #b75633}
+
+.button:active {
+    background-color: #b75633;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+/* Input */
+
+.input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #CCC;
+    color: #555;
+    box-sizing: border-box;
+    font-size: 18px;
+    left:100px;
+    margin: -25px 0 0 -100px;
+    padding: 10px 0px;
+    position: relative;
+    width: 100%;
+}
+.input:focus {
+    outline: none;
+}
+
+input::-webkit-input-placeholder {
+    color: #AAA;
+}
+
+input:focus::-webkit-input-placeholder {
+    color: #666;
+}
+
+.input:focus + .underline {
+    transform: scale(1);
+}
+
+.underline {
+    background: #fff;
+    display: inline-block;
+    height: 2px;
+    left: 50px;
+    margin-top: -4px;
+    position: absolute;
+    top: 185px;
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+    -webkit-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+    width: 202px;
+}
+
+/* Table styling */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+/* Footer */
+footer{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+/* Input fields */
+input[type=text] {
+    padding:5px;
+    border:2px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+input[type=text]:focus {
+    border-color:#333;
+}
+
+textarea {
+    padding:5px;
+    border:2px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    width:100%;
+}
+
+textarea:focus {
+    border-color:#333;
+}
+
+
+/* Tables */
+table.vitamins {
+    margin: 20px 0 0 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background: #212121;
+    color: #fff;
+}
+
+table.vitamins th, table.vitamins td {
+    text-align: center;
+}
+
+table.vitamins thead {
+    line-height: 12px;
+    background: rgba(183, 86, 51, 0.35);
+    text-transform: uppercase;
+}
+
+table.vitamins thead th {
+    color: #fff;
+    padding: 10px;
+    letter-spacing: 1px;
+    vertical-align: bottom;
+}
+
+table.vitamins thead th:nth-child(1) {
+    width: 20%;
+    text-align: left;
+    padding-left: 20px;
+}
+
+table.vitamins thead th:nth-child(2) {
+    width: 30%;
+}
+
+table.vitamins thead th:nth-child(3) {
+    width: 35%;
+}
+
+table.vitamins thead th:nth-child(4) {
+    width: 15%;
+}
+
+table.vitamins tbody {
+    font-size: 1em;
+    line-height: 15px;
+}
+
+table.vitamins tbody tr {
+    border-top: 2px solid rgba(183, 86, 51, 0.8);
+    transition: background 0.6s, color 0.6s;
+}
+
+table.vitamins tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+table.vitamins tbody tr:hover {
+    color: #000;
+    background: rgba(255, 255, 255, 0.7);
+    font-weight: 900;
+}
+
+table.vitamins tbody td {
+    padding: 12px;
+}
+
+table.vitamins tbody tr:hover td:first-child {
+    background: rgba(0,0,0,0);
+}
+
+table.vitamins tbody td:first-child {
+    text-align: left;
+    padding-left: 20px;
+    font-weight: 700;
+    background: rgba(183, 86, 51, 0.35);
+    transition: backgrounf 0.6s;
+}
+
+table.vitamins tfoot {
+    font-size: 0.8em;
+}
+
+table.vitamins tfoot tr {
+    border-top: 2px solid #b75633;
+}
+
+table.vitamins tfoot td {
+    color: rgba(255,255,215,0.6);
+    text-align: left;
+    line-height: 15px;
+    padding: 15px 20px;
+}
+@media screen and (max-width: 400px) {
+    table.vitamins {
+        font-size: 0.8em;
+    }
+}
+/* File css*/
+.fileinput {
+    border:2px solid #ccc;
+}
+.btn-file {
+    border:1px solid #ccc;
+}
+
+.page-item.active .page-link {
+    border-color: #b75633 !important;
+    background: rgba(183, 86, 51, 0.35);
+}
