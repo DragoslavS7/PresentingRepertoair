@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="312162ee-1119-4135-98a4-620bd9e6686e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admins/new-repertoair.php" afterPath="$PROJECT_DIR$/admins/new-repertoair.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asset/script/script.js" afterPath="$PROJECT_DIR$/asset/script/script.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/database.php" afterPath="$PROJECT_DIR$/includes/database.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/request.php" afterPath="$PROJECT_DIR$/request.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,16 +30,23 @@
       <file leaf-file-name="request.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/request.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="123" column="22" lean-forward="true" selection-start-line="123" selection-start-column="22" selection-end-line="123" selection-end-column="22" />
+            <state relative-caret-position="1098">
+              <caret line="97" column="26" lean-forward="true" selection-start-line="97" selection-start-column="26" selection-end-line="97" selection-end-column="26" />
               <folding>
                 <element signature="n#sendEmail#0;n#!!top" expanded="false" />
-                <element signature="n#Login#0;n#!!top" expanded="false" />
-                <element signature="n#Logout#0;n#!!top" expanded="false" />
-                <element signature="n#createRepertoair#0;n#!!top" expanded="false" />
-                <marker date="1528806125444" expanded="true" signature="2153:2242" ph="SELECT `log_... login" />
-                <marker date="1528806125444" expanded="true" signature="3311:3405" ph="INSERT INTO `CreateRep`... " />
+                <marker date="1528809511512" expanded="true" signature="1771:1860" ph="SELECT `log_... login" />
+                <marker date="1528809511512" expanded="true" signature="2862:2956" ph="INSERT INTO `CreateRep`... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/includes/database.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -43,9 +54,11 @@
       <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/asset/script/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
-              <caret line="103" column="17" lean-forward="false" selection-start-line="103" selection-start-column="17" selection-end-line="103" selection-end-column="17" />
-              <folding />
+            <state relative-caret-position="468">
+              <caret line="73" column="29" lean-forward="true" selection-start-line="73" selection-start-column="29" selection-end-line="73" selection-end-column="29" />
+              <folding>
+                <element signature="n#!!block;n#Logout#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -73,8 +86,8 @@
       <file leaf-file-name="new-repertoair.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admins/new-repertoair.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
-              <caret line="37" column="160" lean-forward="false" selection-start-line="37" selection-start-column="160" selection-end-line="37" selection-end-column="160" />
+            <state relative-caret-position="216">
+              <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -103,7 +116,6 @@
         <option value="$PROJECT_DIR$/functions/func-login.php" />
         <option value="$PROJECT_DIR$/config.php" />
         <option value="$PROJECT_DIR$/secondaryLinks/history.php" />
-        <option value="$PROJECT_DIR$/includes/database.php" />
         <option value="$PROJECT_DIR$/parts/home.php" />
         <option value="$PROJECT_DIR$/includes/404.php" />
         <option value="$PROJECT_DIR$/admin-dash.php" />
@@ -124,9 +136,10 @@
         <option value="$PROJECT_DIR$/includes/footer-admins.php" />
         <option value="$PROJECT_DIR$/includes/header.php" />
         <option value="$PROJECT_DIR$/includes/header-admins.php" />
+        <option value="$PROJECT_DIR$/includes/database.php" />
+        <option value="$PROJECT_DIR$/request.php" />
         <option value="$PROJECT_DIR$/admins/new-repertoair.php" />
         <option value="$PROJECT_DIR$/asset/script/script.js" />
-        <option value="$PROJECT_DIR$/request.php" />
       </list>
     </option>
   </component>
@@ -177,7 +190,7 @@
             <path>
               <item name="PresentingRepertoir" type="b2602c69:ProjectViewProjectNode" />
               <item name="PresentingRepertoir" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="asset" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="includes" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="PresentingRepertoir" type="b2602c69:ProjectViewProjectNode" />
@@ -252,12 +265,12 @@
       <workItem from="1528578745912" duration="6377000" />
       <workItem from="1528659728456" duration="6602000" />
       <workItem from="1528711169682" duration="9567000" />
-      <workItem from="1528754672808" duration="16402000" />
+      <workItem from="1528754672808" duration="20501000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163292000" />
+    <option name="totallyTimeSpent" value="167391000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -508,14 +521,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/parts/Login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/parts/profile.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -540,22 +545,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="21" column="58" lean-forward="false" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/header-admins.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -576,14 +565,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
           <caret line="26" column="63" lean-forward="false" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="36" column="2" lean-forward="false" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="2" />
           <folding />
         </state>
       </provider>
@@ -636,33 +617,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asset/script/script.js">
+    <entry file="file://$PROJECT_DIR$/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="103" column="17" lean-forward="false" selection-start-line="103" selection-start-column="17" selection-end-line="103" selection-end-column="17" />
+        <state relative-caret-position="54">
+          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="36" column="2" lean-forward="false" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parts/Login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admins/new-repertoair.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="37" column="160" lean-forward="false" selection-start-line="37" selection-start-column="160" selection-end-line="37" selection-end-column="160" />
+        <state relative-caret-position="216">
+          <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/script/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="73" column="29" lean-forward="true" selection-start-line="73" selection-start-column="29" selection-end-line="73" selection-end-column="29" />
+          <folding>
+            <element signature="n#!!block;n#Logout#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/request.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="123" column="22" lean-forward="true" selection-start-line="123" selection-start-column="22" selection-end-line="123" selection-end-column="22" />
+        <state relative-caret-position="1098">
+          <caret line="97" column="26" lean-forward="true" selection-start-line="97" selection-start-column="26" selection-end-line="97" selection-end-column="26" />
           <folding>
             <element signature="n#sendEmail#0;n#!!top" expanded="false" />
-            <element signature="n#Login#0;n#!!top" expanded="false" />
-            <element signature="n#Logout#0;n#!!top" expanded="false" />
-            <element signature="n#createRepertoair#0;n#!!top" expanded="false" />
-            <marker date="1528806125444" expanded="true" signature="2153:2242" ph="SELECT `log_... login" />
-            <marker date="1528806125444" expanded="true" signature="3311:3405" ph="INSERT INTO `CreateRep`... " />
+            <marker date="1528809511512" expanded="true" signature="1771:1860" ph="SELECT `log_... login" />
+            <marker date="1528809511512" expanded="true" signature="2862:2956" ph="INSERT INTO `CreateRep`... " />
           </folding>
         </state>
       </provider>

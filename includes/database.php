@@ -10,10 +10,23 @@ if (!defined("INFLEX")) {
     die("I miss you Inflex...");
 }
 
-function returnError($data) {
-    global $output;
-    $output['status'] = 'NOK';
-    $output['error'] = $data;
+function returnError( $error, $errno, $url = FALSE ) {
+
+    $error = array(
+        'error' => $error,
+        'errno' => $errno,
+    );
+    if ( $url ) $error[ 'url' ] = $url;
+
+    return $error;
+}
+function success ( $success ) {
+
+    $success = array(
+        'success' => $success
+    );
+
+    return $success;
 }
 
 /*

@@ -3,7 +3,7 @@
     <div class="container">
         <div class="sc-box">
             <h3 class="animated infinite bounceIn">Create new repertoair</h3>
-            <form action="#">
+            <form method="POST" action="#">
                 <div class="row">
                     <div class="col-4">
                         <div class="form-group">

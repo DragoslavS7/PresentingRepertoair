@@ -1,14 +1,14 @@
 <?php
+header('Content-type: application/json; charset=utf-8');
+define("INFLEX", true);
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-header('Content-type: application/json; charset=utf-8');
 require_once('includes/database.php');
-define("INFLEX", true);
 
 function sendEmail($email,$fullName,$subject)
 {
     require_once('asset/phpmailer/PHPMailerAutoload.php');
-    global $db;
 
     $mail = new PHPMailer();
     $mail->CharSet = 'utf-8';
@@ -16,11 +16,11 @@ function sendEmail($email,$fullName,$subject)
     $mail->SMTPDebug = 0;
     $mail->SMTPAuth = true;
     $mail->SMTPSecure = 'ssl';
-    $mail->Host = ''; // your host
+    $mail->Host = 'smtp.gmail.com';
     $mail->Port = 465;
     $mail->IsHTML(true);
-    $mail->Username = 'gagi.predojevic93@hotmail.com';
-    $mail->Password = '070793';
+    $mail->Username = 'gagipredojevic65@gmail.com';
+    $mail->Password = '07071993';
     $mail->SetFrom($email);
     $mail->FromName = $fullName;
     $mail->AddReplyTo('gagi.predojevic93@hotmail.com');
@@ -33,27 +33,21 @@ function sendEmail($email,$fullName,$subject)
     $mail->AddEmbeddedImage('../assets/img/mail/5.png', 'logo_fw');
     $mail->AddEmbeddedImage('../assets/img/mail/6.png', 'logo_yt');
     $mail->AddEmbeddedImage('../assets/img/mail/7.png', 'logo_xi');
-    $files = '/srv/www/FestivalApp2/uploads/';
-    if (is_dir($files) && $dh = opendir($files)) {
-        while (($file = readdir($dh)) !== false) {
-            if (!is_dir($file) && $file !== "thumbnail") {
-                $mimetype = mime_content_type($files.$file);
-                $mail->addAttachment($files.$file, $file, 'base64', $mimetype);
-            }
-        }
+    if(!$mail->send())
+    {
+        $res = returnError( "Mailer Error: " . $mail->ErrorInfo, 400 );
     }
-    $before = '';
-    $mail->Body = $before;
-    $mail->AddAddress('gagipredojevic65@gmail.com');
-    $mail->Send();
+    else
+    {
+        $res = success('Successfuly');
+    }
 
-    return $mail;
+    return $res;
 }
 
 function Login(){
 
     global $db;
-    $res =  array("status" => "OK");
 
     if (isset($_POST['email']) && isset($_POST['password']) && !empty($_POST['email']) && !empty($_POST['password'])) {
 
@@ -67,14 +61,13 @@ function Login(){
 
 
         if ($stmt->num_rows > 0) {
-            $_SESSION['admin'] = $email;
-            $_SESSION['admin'] = $password;
+            $res = success('Successfuly');
         } else {
-            returnError('Invalid username/password');
+            $res = returnError( 'Invalid username/password', 400 );
         }
 
     } else {
-        returnError('Errors to database,please contact admin');
+        $res = returnError( 'Errors to database,please contact admin', 400 );
     }
 
     return $res;
@@ -82,7 +75,7 @@ function Login(){
 }
 
 function Logout(){
-    $res =  array("status" => "OK");
+    $res =  array();
     header("location: ../?page=Login");
     return $res;
 }
@@ -90,7 +83,6 @@ function Logout(){
 function createRepertoair(){
 
     global $db;
-    $res =  array("status" => "OK");
 
     if(isset($_POST['title']) && isset($_POST['dateOf']) && isset($_POST['dateTo']) && isset($_POST['description']) && !empty($_POST['title']) && !empty($_POST['dateOf']) && !empty($_POST['dateTo']) && !empty($_POST['description']))
     {
@@ -106,13 +98,13 @@ function createRepertoair(){
         $stmt->store_result();
 
         if ($stmt->num_rows > 0) {
-            $input = "OK";
+            $res = success('Successfuly');
         } else {
-            returnError('Data is not defined');
+            $res = returnError( 'Not ok', 400 );
         }
 
     } else {
-        returnError('Network connected');
+        $res = returnError( 'Error connected', 400 );
     }
 
     return $res;
@@ -124,7 +116,7 @@ if ( isset( $_POST ) && isset( $_POST[ 'p' ] ) ) {
     $result = array();
     switch ( $_POST[ 'p' ] ) {
         default:
-            returnError( "Invalid \'p\' parameter value." );
+            $result = returnError( 'Invalid \'p\' parameter value.', 400 );
             break;
         case 'Login':
             $result = Login();
@@ -140,8 +132,9 @@ if ( isset( $_POST ) && isset( $_POST[ 'p' ] ) ) {
             $result = createRepertoair();
             echo json_encode( $result );
             break;
+
         case 'sendEmail':
-            $result = sendEmail('gagi.predojevic93@hotmail.com', 'Dragoslav Predojevic','Presenting Repertoair');
+            $result = sendEmail('gagipredojevic65@gmail.com', 'Dragoslav Predojevic','Presenting Repertoair');
             echo json_encode($result);
     }
 }
