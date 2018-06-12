@@ -48,6 +48,8 @@ function sendEmail($email,$fullName,$subject)
 function Login(){
 
     global $db;
+    $act = 'Login';
+    $res = array();
 
     if (isset($_POST['email']) && isset($_POST['password']) && !empty($_POST['email']) && !empty($_POST['password'])) {
 
@@ -61,17 +63,21 @@ function Login(){
 
 
         if ($stmt->num_rows > 0) {
-            $res = success('Successfuly');
+           $r = success('OK');
+             array_push( $res, $r );
+
         } else {
-            $res = returnError( 'Invalid username/password', 400 );
+           $r = returnError($act, 'Invalid username/password', 400 );
+             array_push( $res, $r );
+
         }
 
     } else {
-        $res = returnError( 'Errors to database,please contact admin', 400 );
+       $r =  returnError($act, 'Errors to database,please contact admin', 400 );
+        array_push( $res, $r );
     }
 
     return $res;
-
 }
 
 function Logout(){
@@ -83,6 +89,9 @@ function Logout(){
 function createRepertoair(){
 
     global $db;
+
+    $act = 'createRepertoair';
+    $res = array();
 
     if(isset($_POST['title']) && isset($_POST['dateOf']) && isset($_POST['dateTo']) && isset($_POST['description']) && !empty($_POST['title']) && !empty($_POST['dateOf']) && !empty($_POST['dateTo']) && !empty($_POST['description']))
     {
@@ -98,13 +107,16 @@ function createRepertoair(){
         $stmt->store_result();
 
         if ($stmt->num_rows > 0) {
-            $res = success('Successfuly');
+            $r = success('Successfuly');
+            array_push( $res, $r );
         } else {
-            $res = returnError( 'Not ok', 400 );
+            $r = returnError($act, 'Not ok', 400 );
+            array_push( $res, $r );
         }
 
     } else {
-        $res = returnError( 'Error connected', 400 );
+        $r = returnError($act, 'Error connected', 400 );
+        array_push( $res, $r );
     }
 
     return $res;
@@ -116,7 +128,7 @@ if ( isset( $_POST ) && isset( $_POST[ 'p' ] ) ) {
     $result = array();
     switch ( $_POST[ 'p' ] ) {
         default:
-            $result = returnError( 'Invalid \'p\' parameter value.', 400 );
+            $result = returnError('init', 'Invalid \'p\' parameter value.', 400 );
             break;
         case 'Login':
             $result = Login();

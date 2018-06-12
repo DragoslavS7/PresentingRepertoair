@@ -10,9 +10,10 @@ if (!defined("INFLEX")) {
     die("I miss you Inflex...");
 }
 
-function returnError( $error, $errno, $url = FALSE ) {
+function returnError($act, $error, $errno, $url = FALSE ) {
 
     $error = array(
+        'act'   => $act,
         'error' => $error,
         'errno' => $errno,
     );
