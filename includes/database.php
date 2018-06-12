@@ -21,10 +21,11 @@ function returnError($act, $error, $errno, $url = FALSE ) {
 
     return $error;
 }
-function success ( $success ) {
+function success ( $success,$status) {
 
     $success = array(
-        'success' => $success
+        'success' => $success,
+        'status' => $status
     );
 
     return $success;

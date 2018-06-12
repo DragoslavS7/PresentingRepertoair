@@ -9,6 +9,8 @@ require_once('includes/database.php');
 function sendEmail($email,$fullName,$subject)
 {
     require_once('asset/phpmailer/PHPMailerAutoload.php');
+    $act = 'sendEmail';
+    $res = array();
 
     $mail = new PHPMailer();
     $mail->CharSet = 'utf-8';
@@ -35,11 +37,13 @@ function sendEmail($email,$fullName,$subject)
     $mail->AddEmbeddedImage('../assets/img/mail/7.png', 'logo_xi');
     if(!$mail->send())
     {
-        $res = returnError( "Mailer Error: " . $mail->ErrorInfo, 400 );
+        $r = returnError($act, "Mailer Error: " . $mail->ErrorInfo, 400 );
+        array_push( $res, $r );
     }
     else
     {
-        $res = success('Successfuly');
+        $r = success("OK",200);
+        array_push( $res, $r );
     }
 
     return $res;
@@ -63,18 +67,18 @@ function Login(){
 
 
         if ($stmt->num_rows > 0) {
-           $r = success('OK');
-             array_push( $res, $r );
+           $r = success("OK",200);
+           if ( ! in_array( $r, $res ) ) array_push( $res, $r );
 
         } else {
            $r = returnError($act, 'Invalid username/password', 400 );
-             array_push( $res, $r );
+           if ( ! in_array( $r, $res ) ) array_push( $res, $r );
 
         }
 
     } else {
        $r =  returnError($act, 'Errors to database,please contact admin', 400 );
-        array_push( $res, $r );
+       if ( ! in_array( $r, $res ) ) array_push( $res, $r );
     }
 
     return $res;
@@ -107,16 +111,16 @@ function createRepertoair(){
         $stmt->store_result();
 
         if ($stmt->num_rows > 0) {
-            $r = success('Successfuly');
-            array_push( $res, $r );
+            $r = success("OK",200);
+            if ( ! in_array( $r, $res ) ) array_push( $res, $r );
         } else {
             $r = returnError($act, 'Not ok', 400 );
-            array_push( $res, $r );
+            if ( ! in_array( $r, $res ) ) array_push( $res, $r );
         }
 
     } else {
         $r = returnError($act, 'Error connected', 400 );
-        array_push( $res, $r );
+        if ( ! in_array( $r, $res ) ) array_push( $res, $r );
     }
 
     return $res;
@@ -130,6 +134,7 @@ if ( isset( $_POST ) && isset( $_POST[ 'p' ] ) ) {
         default:
             $result = returnError('init', 'Invalid \'p\' parameter value.', 400 );
             break;
+
         case 'Login':
             $result = Login();
             echo json_encode( $result );

@@ -86,7 +86,7 @@ function apiCall() {
 $(document).ready(function () {
    curoselItem();
    apiCall();
-   //Logout();
+   Logout();
    CreateRepertoair();
 });
 
