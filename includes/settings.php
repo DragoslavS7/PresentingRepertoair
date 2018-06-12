@@ -19,7 +19,8 @@ $jasnyBootstrapJS = TRUE;
 $dataTables = TRUE;
 $jQueryDataTables = TRUE;
 $bootDataTables = TRUE;
-
+$sweetAlert = TRUE;
+$sweetAlertJS = TRUE;
 
 
 

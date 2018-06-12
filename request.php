@@ -12,7 +12,7 @@ if ( isset( $_POST ) && isset( $_POST[ 'p' ] ) ) {
             break;
         case 'Login':
             require_once('includes/database.php');
-            $output =  array('status' => 'OK');
+            $output =  array("status" => "OK");
 
             if (isset($_POST['email']) && isset($_POST['password']) && !empty($_POST['email']) && !empty($_POST['password'])) {
 
@@ -40,7 +40,7 @@ if ( isset( $_POST ) && isset( $_POST[ 'p' ] ) ) {
             break;
 
         case 'Logout':
-            $output =  array('status' => 'OK');
+            $output =  array("status" => "OK");
                 header("location: ../?page=Login");
             echo json_encode( $output );
             break;

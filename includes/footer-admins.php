@@ -23,6 +23,7 @@
 <script src="../asset/script/bootstrap/jasny-bootstrap.min.js"></script>
 <script src="../asset/script/dataTables/jquery.dataTables.js"></script>
 <script src="../asset/script/dataTables/dataTables.bootstrap4.js"></script>
+<script src="../asset/script/swal/sweetalert2.js"></script>
 <script src="../asset/script/dashboard-admins.js"></script>
 <script src="../asset/script/script.js"></script>
 <html>

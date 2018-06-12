@@ -82,6 +82,9 @@
     <?php if(isset($bootDataTables) && $bootDataTables):?>
         <script src="asset/script/dataTables/dataTables.bootstrap4.js"></script>
     <?php endif; ?>
+    <?php if(isset($sweetAlertJS) && $sweetAlertJS):?>
+        <script src="asset/script/swal/sweetalert2.js"></script>
+    <?php endif; ?>
     <?php if(isset($adminJS) && $adminJS): ?>
         <script src="asset/script/dashboard-admins.js"></script>
     <?php endif; ?>

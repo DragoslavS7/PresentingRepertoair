@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../asset/css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../asset/css/bootstrap/jasny-bootstrap.min.css ">
     <link rel="stylesheet" href="../asset/css/dataTables/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="../asset/css/swal/sweetalert2.css">
     <link rel="stylesheet" href="../asset/css/dashboard-admins.css">
 
 </head>

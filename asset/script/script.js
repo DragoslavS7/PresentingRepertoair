@@ -13,7 +13,6 @@ function apiCall() {
 
     $('#sub-login').on('click', function (e) {
         e.preventDefault();
-
         $.ajax({
             url: "../request.php",
             method: "POST",
@@ -23,12 +22,33 @@ function apiCall() {
             success: function(response) {
                       if(response.status == "OK"){
                          console.log(response);
-                         window.location.href = "../admins/new-repertoair.php";
+                          swal({
+                              title: 'Ok',
+                              text: "Are you sure you want to get out?",
+                              type: 'success',
+                              showCancelButton: true
+                          }).then(function () {
+                              window.location.href = '../admins/new-repertoair.php';
+                          },function(dismiss) {
+                              if (dismiss === 'cancel') {
+                                  swal(
+                                      'cancel',
+                                      'Thank you :)',
+                                      'error'
+                                  )
+                              }
+                          });
                       }else{
                           console.error(response);
                       }
             },
             error:  function(error){
+                swal({
+                    title: 'Error!',
+                    text: 'Errors to database,please contact admin',
+                    type: 'error',
+                    confirmButtonText: 'Ok'
+                });
                 console.error(error);
             }
 
@@ -46,7 +66,22 @@ function apiCall() {
                'p':'Logout'
              },
              success: function(response){
-                 window.location.href = "../?page=Login";
+                 swal({
+                     title: 'Close',
+                     text: "Are you sure you want to get out?",
+                     type: 'warning',
+                     showCancelButton: true
+                 }).then(function () {
+                     window.location.href = '../?page=Login';
+                 },function(dismiss) {
+                     if (dismiss === 'cancel') {
+                         swal(
+                             'cancel',
+                             'Thank you :)',
+                             'error'
+                         )
+                     }
+                 });
              }
          });
      });

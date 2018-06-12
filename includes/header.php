@@ -23,6 +23,9 @@
     <?php if(isset($dataTables) && $dataTables): ?>
         <link rel="stylesheet" href="asset/css/dataTables/dataTables.bootstrap4.css">
     <?php endif; ?>
+    <?php if(isset($sweetAlert) && $sweetAlert): ?>
+        <link rel="stylesheet" href="asset/css/swal/sweetalert2.css">
+    <?php endif; ?>
     <?php if(isset($AdminCSS) && $AdminCSS): ?>
         <link rel="stylesheet" href="asset/css/dashboard-admins.css">
     <?php endif; ?>
