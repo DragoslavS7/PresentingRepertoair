@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+<head <?php require_once 'settings.php'; ?> >
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="../asset/img/iconsSVG.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presenting Repertoir</title>
+    <title><?php if(isset($pagetitle) && !empty($pagetitle)) { echo $pagetitle; } else { echo "Error"; }?></title>
     <link rel="stylesheet" href="../asset/css/animate.css">
     <link rel="stylesheet" href="../asset/css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../asset/css/bootstrap/jasny-bootstrap.min.css ">

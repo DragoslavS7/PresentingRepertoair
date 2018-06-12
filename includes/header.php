@@ -34,7 +34,6 @@
 
 <body>
 
-<?php if(!$removeNavCustomer): ?>
 <div class="container">
     <nav class="navbar navbar-dark bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,7 +70,6 @@
         </div>
 
     </div>
-<?php endif; ?>
 
 
 

@@ -1,6 +1,5 @@
 
 
-<?php if(!$removeFoot): ?>
 <footer class="sc-footer bg-dark text-white mt-4 ">
     <div class="container-fluid py-3">
         <div class="row">
@@ -66,7 +65,6 @@
     </div>
 </footer>
 </div>
-<?php endif; ?>
 
 </body>
     <?php if(isset($jQuery) && $jQuery): ?>

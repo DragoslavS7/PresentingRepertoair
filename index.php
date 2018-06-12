@@ -30,18 +30,6 @@ if (! isset($_GET['page']))
         case 'his':
             include('secondaryLinks/history.php');
             break;
-        case 'admins-create':
-            include('admins/new-repertoair.php');
-            break;
-        case 'admins-tab':
-            include('admins/tables-repertoair.php');
-            break;
-        case 'admins-stats':
-            include('admins/stats-repertoir.php');
-            break;
-        case 'admins-custom':
-            include('admins/custom-repertoair.php');
-            break;
     }
 }
 require("includes/footer.php");

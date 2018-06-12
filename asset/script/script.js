@@ -36,24 +36,26 @@ function apiCall() {
     } );
 
 }
-// function Logout () {
-//     $('.finish').on('click', function(e) {
-//         e.preventDefault();
-//         $.ajax({
-//             url: '../request.php',
-//             success: function(data){
-//                 console.log(data);
-//
-
-//             }
-//         });
-//     });
-// }
+ function Logout () {
+     $('.finish').on('click', function(e) {
+         e.preventDefault();
+         $.ajax({
+             url: '../request.php',
+             method: "POST",
+             data:{
+               'p':'Logout'
+             },
+             success: function(response){
+                 window.location.href = "../?page=Login";
+             }
+         });
+     });
+ }
 
 
 $(document).ready(function () {
    curoselItem();
-   //apiCall();
-   //Logout();
+   apiCall();
+   Logout();
 });
 

@@ -1,6 +1,6 @@
 
 <div class="sc-box">
-    <form class="form-signin" method="POST" action="../request.php">
+    <form class="form-signin" method="POST" action="#">
         <h2 class="form-signin-heading text-center animated infinite swing">Please sign in</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required="" autofocus="">
