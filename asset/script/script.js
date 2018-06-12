@@ -87,10 +87,36 @@ function apiCall() {
      });
  }
 
+ function CreateRepertoair() {
+    $('#submitCreat').on('click',function(e) {
+        e.preventDefault();
+        $.ajax({
+            url:'../request.php',
+            method:'POST',
+            data:{
+                'p':'createRep'
+            },
+            success:function(response){
+                if(response.status == "OK"){
+                    console.log(response);
+                }else{
+                    console.log(response.error);
+                }
+
+            },
+            error:function(error){
+                console.log(error);
+            }
+
+        });
+    });
+ }
+
 
 $(document).ready(function () {
    curoselItem();
    apiCall();
    Logout();
+   CreateRepertoair();
 });
 

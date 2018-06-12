@@ -14,13 +14,13 @@
                     <div class="col-4">
                         <div class="form-group">
                             <label for="date">Date</label>
-                            <input type="text" id="date" name="date" placeholder="Enter some text">
+                            <input type="text" id="dateOf" name="dateOf" placeholder="Enter some text">
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="form-group">
                             <label for="date">Date</label>
-                            <input type="text" id="date" name="date" placeholder="Enter some text">
+                            <input type="text" id="dateTo" name="dateTo" placeholder="Enter some text">
                         </div>
                     </div>
                 </div>
@@ -28,18 +28,18 @@
                     <div class="col-12">
                         <div class="form-group">
                             <label for="date">Description</label>
-                            <textarea cols="20" rows="5" placeholder="Enter some text"></textarea>
+                            <textarea cols="20" rows="5" name="description" id="description" placeholder="Enter some text"></textarea>
                         </div>
                     </div>
                 </div>
                 <div class="fileinput fileinput-new" data-provides="fileinput">
                     <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
                     <div class="btn-file">
-                        <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
+                        <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="file" id="file"></span>
                         <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
                     </div>
                 </div>
-                <input class="button" type="submit" value="Submit">
+                <input class="button" type="submit" id="submitCreat" value="Submit">
             </form>
         </div>
     </div>
