@@ -95,13 +95,13 @@
  }
 
  function CreateRepertoair() {
-    $('#submitCreat').on('click',function(e) {
+    $('.submitCreat').on('click',function(e) {
         e.preventDefault();
         var title       = $('#title').val(),
             dateOf      = $('#dateOf').val(),
             dateTo      = $('#dateTo').val(),
             description = $('#description').val(),
-            file        = $('#file').val();
+            file        = $('#upload').val();
         $.ajax({
             url:'../request.php',
             method:'POST',
@@ -126,9 +126,9 @@
  }
 
  function imageHeandler() {
-    $('#submitCreat').on('click',function(e){
+    $('.submitCreat').on('click',function(e){
         e.preventDefault();
-        $('#file').trigger('click');
+        $('#upload').trigger('click');
         $.ajax({
             url: '../request.php',
             method: 'POST',
@@ -155,4 +155,5 @@ $(document).ready(function () {
    CreateRepertoair();
    imageHeandler();
 });
+
 

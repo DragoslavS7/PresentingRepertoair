@@ -130,10 +130,18 @@ function sendFile(){
     $act = 'SendFile';
     $res = array();
 
-    $allowed_extensions = array('png', 'jpg', 'gif');
+    if( isset($_FILES['upload']) && $_FILES["upload"]["error"] >= 0 ) {
 
-    if ( !in_array( $_FILES[ "file" ][ "type" ], $allowed_extensions ) ){
-        $r = success($act,"You may only upload png, jpg or gif",200);
+        if( move_uploaded_file($_FILES['upload']['tmp_name'], 'uploads/') ){
+            $r = success($act,"OK",200);
+            if ( ! in_array( $r, $res ) ) array_push( $res, $r );
+        } else {
+            $r = returnError($act, 'Not ok', 400 );
+            if ( ! in_array( $r, $res ) ) array_push( $res, $r );
+        }
+
+    } else {
+        $r = returnError($act, 'fields', 400 );
         if ( ! in_array( $r, $res ) ) array_push( $res, $r );
     }
 

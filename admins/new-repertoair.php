@@ -35,11 +35,11 @@
                 <div class="fileinput fileinput-new" data-provides="fileinput">
                     <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
                     <div class="btn-file">
-                        <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="file" id="file"></span>
+                        <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="upload" id="upload"></span>
                         <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
                     </div>
                 </div>
-                <input class="button" type="submit" id="submitCreat" value="Submit">
+                <input class="button submitCreat" type="submit" id="submitCreat" value="Submit">
             </form>
         </div>
     </div>
