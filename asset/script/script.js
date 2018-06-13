@@ -125,6 +125,27 @@
     });
  }
 
+ function imageHeandler() {
+    $('#submitCreat').on('click',function(e){
+        e.preventDefault();
+        $('#file').trigger('click');
+        $.ajax({
+            url: '../request.php',
+            method: 'POST',
+            data: {
+              'p': 'sendFile'
+            },
+            success: function (response) {
+                console.log(response);
+            },
+            error: function (error) {
+                console.log(error);
+            }
+
+
+        });
+    });
+ }
 
 
 $(document).ready(function () {
@@ -132,5 +153,6 @@ $(document).ready(function () {
    loginForm();
    Logout();
    CreateRepertoair();
+   imageHeandler();
 });
 

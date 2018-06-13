@@ -127,15 +127,15 @@ function createRepertoair(){
 }
 
 function sendFile(){
-    $act = 'createRepertoair';
+    $act = 'SendFile';
     $res = array();
 
-    $extension = array('png', 'jpg', 'gif','jpeg');
+    $allowed_extensions = array('png', 'jpg', 'gif');
 
-        $img  = $_FILES[ 'file' ];
-        $file = fopen( $img[ 'tmp_name' ], 'r' );
-
-        echo json_encode( $res );
+    if ( !in_array( $_FILES[ "file" ][ "type" ], $allowed_extensions ) ){
+        $r = success($act,"You may only upload png, jpg or gif",200);
+        if ( ! in_array( $r, $res ) ) array_push( $res, $r );
+    }
 
     return $res;
 }
