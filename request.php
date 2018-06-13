@@ -1,9 +1,9 @@
 <?php
-header('Content-type: application/json; charset=utf-8');
-define("INFLEX", true);
-
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+
+header('Content-type: application/json; charset=utf-8');
+define("INFLEX", true);
 require_once('includes/database.php');
 
 function sendEmail($email,$fullName,$subject)
@@ -42,7 +42,7 @@ function sendEmail($email,$fullName,$subject)
     }
     else
     {
-        $r = success("OK",200);
+        $r = success($act,"OK",200);
         array_push( $res, $r );
     }
 
@@ -67,11 +67,11 @@ function Login(){
 
 
         if ($stmt->num_rows > 0) {
-           $r = success("OK",200);
+           $r = success($act,"OK",200);
            if ( ! in_array( $r, $res ) ) array_push( $res, $r );
 
         } else {
-           $r = returnError($act, 'Invalid username/password', 400 );
+           $r = returnError($act, 'Invalid email/password', 400 );
            if ( ! in_array( $r, $res ) ) array_push( $res, $r );
 
         }
@@ -106,12 +106,12 @@ function createRepertoair(){
         $file = $_POST['file'];
 
         $stmt = $db->prepare("INSERT INTO `CreateRep`(`title`, `dateOf`, `dateTo`, `description`, `file`) VALUES (?,?,?,?,?)");
-        $stmt->bind_param("ssss", $title, $dateOf,$dateTo,$desc,$file);
+        $stmt->bind_param("sssss", $title, $dateOf,$dateTo,$desc,$file);
         $stmt->execute();
         $stmt->store_result();
 
         if ($stmt->num_rows > 0) {
-            $r = success("OK",200);
+            $r = success($act,"OK",200);
             if ( ! in_array( $r, $res ) ) array_push( $res, $r );
         } else {
             $r = returnError($act, 'Not ok', 400 );
@@ -126,18 +126,32 @@ function createRepertoair(){
     return $res;
 }
 
+function sendFile(){
+    $act = 'createRepertoair';
+    $res = array();
+
+    $extension = array('png', 'jpg', 'gif','jpeg');
+
+        $img  = $_FILES[ 'file' ];
+        $file = fopen( $img[ 'tmp_name' ], 'r' );
+
+        echo json_encode( $res );
+
+    return $res;
+}
+
 
 
 if ( isset( $_POST ) && isset( $_POST[ 'p' ] ) ) {
     $result = array();
     switch ( $_POST[ 'p' ] ) {
         default:
-            $result = returnError('init', 'Invalid \'p\' parameter value.', 400 );
+            $result = returnError('ERROR', 'Invalid \'p\' parameter value.', 400 );
             break;
 
         case 'Login':
             $result = Login();
-            echo json_encode( $result );
+            echo json_encode( $result[0] );
             break;
 
         case 'Logout':
@@ -147,7 +161,12 @@ if ( isset( $_POST ) && isset( $_POST[ 'p' ] ) ) {
 
         case 'createRep':
             $result = createRepertoair();
-            echo json_encode( $result );
+            echo json_encode( $result[0] );
+            break;
+
+        case 'sendFile':
+            $result = sendFile();
+            echo json_encode( $result[0] );
             break;
 
         case 'sendEmail':

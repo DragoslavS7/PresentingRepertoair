@@ -1,5 +1,5 @@
 
-function curoselItem() {
+ function curoselItem() {
     $('.carousel .carousel-item[data-src]').each(function() {
         var $this = $(this);
 
@@ -7,29 +7,62 @@ function curoselItem() {
             '<div style="background-image: url(', $this.attr('data-src'), ')"></div>'
         ].join(''));
     });
-}
+ }
 
-function apiCall() {
+ function loginForm() {
 
     $('#sub-login').on('click', function (e) {
         e.preventDefault();
+        var email    = $('#email').val(),
+            password = $('#password').val();
+
         $.ajax({
             url: "../request.php",
             method: "POST",
             data: {
+                'email': email,
+                'password': password,
                 'p': 'Login'
             },
             success: function(response) {
-                    console.log(response);
+                if(response.success == "OK"){
+                    swal({
+                        title: 'Success',
+                        text: "Are you sure you want to get out?",
+                        type: 'success',
+                        showCancelButton: true
+                    }).then(function () {
+                        window.location.href = '../admins/new-repertoair.php';
+                    },function(dismiss) {
+                        if (dismiss === 'cancel') {
+                            swal(
+                                'cancel',
+                                'Thank you :)',
+                                'error'
+                            )
+                        }
+                    });
+                }else{
+                    swal({
+                        type: 'warning',
+                        title: 'Oops...',
+                        text: 'Invalid email/password!'
+                    });
+                }
             },
             error:  function(error){
-                console.error(error);
+                swal({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: 'Errors to database,please contact admin!'
+                });
             }
 
         });
     } );
 
-}
+ }
+
  function Logout () {
      $('.finish').on('click', function(e) {
          e.preventDefault();
@@ -64,10 +97,20 @@ function apiCall() {
  function CreateRepertoair() {
     $('#submitCreat').on('click',function(e) {
         e.preventDefault();
+        var title       = $('#title').val(),
+            dateOf      = $('#dateOf').val(),
+            dateTo      = $('#dateTo').val(),
+            description = $('#description').val(),
+            file        = $('#file').val();
         $.ajax({
             url:'../request.php',
             method:'POST',
             data:{
+                'title':title,
+                'dateOf':dateOf,
+                'dateTo':dateTo,
+                'description':description,
+                'file':file,
                 'p':'createRep'
             },
             success:function(response){
@@ -83,9 +126,10 @@ function apiCall() {
  }
 
 
+
 $(document).ready(function () {
    curoselItem();
-   apiCall();
+   loginForm();
    Logout();
    CreateRepertoair();
 });
