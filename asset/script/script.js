@@ -95,7 +95,7 @@
  }
 
  function CreateRepertoair() {
-    $('.submitCreat').on('click',function(e) {
+    $('#submitCreat').on('click',function(e) {
         e.preventDefault();
         var title       = $('#title').val(),
             dateOf      = $('#dateOf').val(),
@@ -126,7 +126,7 @@
  }
 
  function fileHeandler() {
-    $('.submitCreat').on('click',function(e){
+    $('#fileBtn').on('click',function(e){
         e.preventDefault();
         $('#file').trigger('click');
     });
@@ -144,7 +144,7 @@
                 contentType: false,
                 dataType: "json",
                 success: function (data) {
-                    console.log(data)
+                    console.log(data[0])
                 },
                 error: function (error) {
                     console.log(error);
