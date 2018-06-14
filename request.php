@@ -97,7 +97,7 @@ function createRepertoair(){
     $act = 'createRepertoair';
     $res = array();
 
-    if(isset($_POST['title']) && isset($_POST['dateOf']) && isset($_POST['dateTo']) && isset($_POST['description']) && !empty($_POST['title']) && !empty($_POST['dateOf']) && !empty($_POST['dateTo']) && !empty($_POST['description']))
+    if(isset($_POST['title']) && isset($_POST['dateOf']) && isset($_POST['dateTo']) && isset($_POST['description']) && isset($_POST['file']) && !empty($_POST['title']) && !empty($_POST['dateOf']) && !empty($_POST['dateTo']) && !empty($_POST['description']) && !empty($_POST['file']))
     {
         $title = $_POST['title'];
         $dateOf = $_POST['dateOf'];
@@ -107,15 +107,15 @@ function createRepertoair(){
 
         $stmt = $db->prepare("INSERT INTO `CreateRep`(`title`, `dateOf`, `dateTo`, `description`, `file`) VALUES (?,?,?,?,?)");
         $stmt->bind_param("sssss", $title, $dateOf,$dateTo,$desc,$file);
-        $stmt->execute();
-        $stmt->store_result();
 
-        if ($stmt->num_rows > 0) {
+        if ($stmt->execute()) {
             $r = success($act,"OK",200);
             if ( ! in_array( $r, $res ) ) array_push( $res, $r );
+
         } else {
-            $r = returnError($act, 'Not ok', 400 );
+            $r = returnError($act, 'Fill in all the fields!', 400 );
             if ( ! in_array( $r, $res ) ) array_push( $res, $r );
+
         }
 
     } else {

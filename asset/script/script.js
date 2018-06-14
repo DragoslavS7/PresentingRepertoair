@@ -64,6 +64,7 @@
  }
 
  function Logout () {
+
      $('.finish').on('click', function(e) {
          e.preventDefault();
          $.ajax({
@@ -92,9 +93,11 @@
              }
          });
      });
+
  }
 
  function CreateRepertoair() {
+
     $('#submitCreat').on('click',function(e) {
         e.preventDefault();
         var title       = $('#title').val(),
@@ -114,7 +117,19 @@
                 'p':'createRep'
             },
             success:function(response){
-                    console.log(response);
+                if(response.success == "OK"){
+                    swal({
+                        title: 'Success',
+                        text: "Are you sure you want to get out?",
+                        type: 'success'
+                    });
+                }else{
+                    swal({
+                        type: 'warning',
+                        title: 'Oops...',
+                        text: 'Fill in all the fields!'
+                    });
+                }
 
             },
             error:function(error){
@@ -123,9 +138,11 @@
 
         });
     });
+
  }
 
  function fileHeandler() {
+
     $('#fileBtn').on('click',function(e){
         e.preventDefault();
         $('#file').trigger('click');
@@ -151,6 +168,7 @@
                 }
             });
         });
+
  }
 
 
