@@ -101,7 +101,7 @@
             dateOf      = $('#dateOf').val(),
             dateTo      = $('#dateTo').val(),
             description = $('#description').val(),
-            file        = $('#upload').val();
+            file        = $('#file').val();
         $.ajax({
             url:'../request.php',
             method:'POST',
@@ -125,26 +125,32 @@
     });
  }
 
- function imageHeandler() {
+ function fileHeandler() {
     $('.submitCreat').on('click',function(e){
         e.preventDefault();
-        $('#upload').trigger('click');
-        $.ajax({
-            url: '../request.php',
-            method: 'POST',
-            data: {
-              'p': 'sendFile'
-            },
-            success: function (response) {
-                console.log(response);
-            },
-            error: function (error) {
-                console.log(error);
-            }
-
-
-        });
+        $('#file').trigger('click');
     });
+        $('#file').change(function(e){
+            e.preventDefault();
+
+            var form = new FormData();
+
+            form.append('file',  $('#file')[0].files[0]);
+            $.ajax({
+                url: '../request.php?p=file',
+                method: 'POST',
+                data: form,
+                processData: false,
+                contentType: false,
+                dataType: "json",
+                success: function (data) {
+                    console.log(data)
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        });
  }
 
 
@@ -153,7 +159,7 @@ $(document).ready(function () {
    loginForm();
    Logout();
    CreateRepertoair();
-   imageHeandler();
+   fileHeandler();
 });
 
 

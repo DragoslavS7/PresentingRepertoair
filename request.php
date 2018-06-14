@@ -126,28 +126,24 @@ function createRepertoair(){
     return $res;
 }
 
-function sendFile(){
+
+if ( ! empty( $_GET[ 'p' ] ) &&  $_GET[ 'p' ] == 'file' ) {
+
     $act = 'SendFile';
     $res = array();
 
-    if( isset($_FILES['upload']) && $_FILES["upload"]["error"] >= 0 ) {
+    if( !empty($_FILES['file']) && $_FILES['file']['error'] == 0){
 
-        if( move_uploaded_file($_FILES['upload']['tmp_name'], 'uploads/') ){
+        if(move_uploaded_file($_FILES['file']['tmp_name'], 'uploads/'.basename($_FILES['file']['name']))){
             $r = success($act,"OK",200);
-            if ( ! in_array( $r, $res ) ) array_push( $res, $r );
-        } else {
-            $r = returnError($act, 'Not ok', 400 );
             if ( ! in_array( $r, $res ) ) array_push( $res, $r );
         }
 
-    } else {
-        $r = returnError($act, 'fields', 400 );
-        if ( ! in_array( $r, $res ) ) array_push( $res, $r );
     }
 
-    return $res;
-}
+    echo json_encode($res);
 
+}
 
 
 if ( isset( $_POST ) && isset( $_POST[ 'p' ] ) ) {
@@ -169,11 +165,6 @@ if ( isset( $_POST ) && isset( $_POST[ 'p' ] ) ) {
 
         case 'createRep':
             $result = createRepertoair();
-            echo json_encode( $result[0] );
-            break;
-
-        case 'sendFile':
-            $result = sendFile();
             echo json_encode( $result[0] );
             break;
 
