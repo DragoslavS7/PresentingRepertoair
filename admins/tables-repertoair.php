@@ -21,13 +21,18 @@
                         <?php
                         $table= $db->query("SELECT `id`,`title`, `dateOf`, `dateTo`, `description`, `file`,`create_at` FROM `CreateRep` ORDER BY `title`, `dateOf`, `dateTo`, `description`, `file`,`create_at`");
                         if($table->num_rows > 0):
-                            while ($row = $table->fetch_assoc()):
-                                echo '<tr>';
-                                echo '<td>'.$row['id'].'</td><td>'.$row['title'].'</td><td>'.$row['dateOf'].'</td><td>'.$row['dateTo'].'</td><td>'.$row['description'].'</td><td>'.$row['file'].'</td><td>'.$row['create_at'].'</td>';
-                                echo '</tr>';
-                            endwhile;
-                        endif;
-                        ?>
+                            while ($row = $table->fetch_assoc()): ?>
+                        <tr>
+                            <td><?php echo $row['id']; ?></td>
+                            <td><?php echo $row['title']; ?></td>
+                            <td><?php echo $row['dateOf']; ?></td>
+                            <td><?php echo $row['dateTo']; ?></td>
+                            <td><?php echo $row['description']; ?></td>
+                            <td><?php echo $row['file']; ?></td>
+                            <td><?php echo $row['create_at']; ?></td>
+                        </tr>
+                        <?php endwhile; ?>
+                        <?php endif; ?>
                         </tbody>
                 </div>
             </div>

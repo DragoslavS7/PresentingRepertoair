@@ -5,10 +5,11 @@ ini_set('display_errors', 1);
 header('Content-type: application/json; charset=utf-8');
 define("INFLEX", true);
 require_once('includes/database.php');
+require_once('asset/phpmailer/PHPMailerAutoload.php');
 
 function sendEmail($email,$fullName,$subject)
 {
-    require_once('asset/phpmailer/PHPMailerAutoload.php');
+
     $act = 'sendEmail';
     $res = array();
 
@@ -17,25 +18,26 @@ function sendEmail($email,$fullName,$subject)
     $mail->IsSMTP();
     $mail->SMTPDebug = 0;
     $mail->SMTPAuth = true;
-    $mail->SMTPSecure = 'ssl';
+    $mail->SMTPSecure = 'tls';
     $mail->Host = 'smtp.gmail.com';
-    $mail->Port = 465;
+    $mail->Port = 587;
     $mail->IsHTML(true);
     $mail->Username = 'gagipredojevic65@gmail.com';
     $mail->Password = '07071993';
     $mail->SetFrom($email);
     $mail->FromName = $fullName;
-    $mail->AddReplyTo('gagi.predojevic93@hotmail.com');
+    $mail->addAddress("gagipredojevic65@gmail.com", "Recepient Name");
+    $mail->AddReplyTo('gagipredojevic65@gmail.com');
     $mail->Subject = $subject;
-    $mail->AddEmbeddedImage('../assets/img/mail/bottom.png', 'logo_2');
-    $mail->AddEmbeddedImage('../assets/img/mail/1.png', 'logo_fb');
-    $mail->AddEmbeddedImage('../assets/img/mail/2.png', 'logo_gp');
-    $mail->AddEmbeddedImage('../assets/img/mail/3.png', 'logo_li');
-    $mail->AddEmbeddedImage('../assets/img/mail/4.png', 'logo_tw');
-    $mail->AddEmbeddedImage('../assets/img/mail/5.png', 'logo_fw');
-    $mail->AddEmbeddedImage('../assets/img/mail/6.png', 'logo_yt');
-    $mail->AddEmbeddedImage('../assets/img/mail/7.png', 'logo_xi');
-    if(!$mail->send())
+    $mail->AddEmbeddedImage('assets/img/facebook.svg', 'logo_2');
+    $mail->AddEmbeddedImage('assets/img/google-plus.svg', 'logo_fb');
+    $mail->AddEmbeddedImage('assets/img/instagram.svg', 'logo_gp');
+    $mail->AddEmbeddedImage('assets/img/linkedin.svg', 'logo_li');
+    $mail->AddEmbeddedImage('assets/img/twitter.svg', 'logo_tw');
+    $mail->AddEmbeddedImage('assets/img/youtube.svg', 'logo_fw');
+    $mail->Body ='test';
+    $mail->send();
+    /*if(!$mail->send())
     {
         $r = returnError($act, "Mailer Error: " . $mail->ErrorInfo, 400 );
         array_push( $res, $r );
@@ -44,9 +46,9 @@ function sendEmail($email,$fullName,$subject)
     {
         $r = success($act,"OK",200);
         array_push( $res, $r );
-    }
+    }*/
 
-    return $res;
+    return $mail;
 }
 
 function Login(){
@@ -126,6 +128,50 @@ function createRepertoair(){
     return $res;
 }
 
+function reservedForm(){
+
+    global $db;
+
+    $act = 'reserved-form';
+    $res = array();
+
+    if(isset($_POST['Title']) && isset($_POST['firstName']) && isset($_POST['lastName']) && isset($_POST['username']) && isset($_POST['email']) && isset($_POST['address']) && isset($_POST['address2']) && isset($_POST['country']) && isset($_POST['state']) && isset($_POST['zip']) && isset($_POST['tik_s']) && !empty($_POST['Title']) && !empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['address']) && isset($_POST['address2']) && !empty($_POST['country']) && !empty($_POST['state']) && !empty($_POST['zip']) && !empty($_POST['tik_s']))
+    {
+        $Title = $_POST['Title'];
+        $firstName = $_POST['firstName'];
+        $lastName = $_POST['lastName'];
+        $username = $_POST['username'];
+        $email  = $_POST['email'];
+        $adresse1 = $_POST['address'];
+        $address2 = $_POST['address2'];
+        $country = $_POST['country'];
+        $state = $_POST['state'];
+        $zip = $_POST['zip'];
+        $tik_s = $_POST['tik_s'];
+
+
+
+        $stmt = $db->prepare("INSERT INTO `Reserved`(`title`,`fname`,`lname`,`user`,`email`,`address`,`address2`,`country`,`state`,`zip`,`tikets`) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+        $stmt->bind_param('sssssssssss',$Title,$firstName,$lastName,$username,$email,$adresse1,$address2,$country,$state,$zip,$tik_s );
+
+        if ($stmt->execute()) {
+            $r = success($act,"OK",200);
+            if ( ! in_array( $r, $res ) ) array_push( $res, $r );
+
+        } else {
+            $r = returnError($act, 'Invalid fields', 400 );
+            if ( ! in_array( $r, $res ) ) array_push( $res, $r );
+
+        }
+
+    } else {
+        $r =  returnError($act, 'Errors to database,please contact admin', 400 );
+        if ( ! in_array( $r, $res ) ) array_push( $res, $r );
+    }
+
+    return $res;
+}
+
 
 if ( ! empty( $_GET[ 'p' ] ) &&  $_GET[ 'p' ] == 'file' ) {
 
@@ -161,6 +207,11 @@ if ( isset( $_POST ) && isset( $_POST[ 'p' ] ) ) {
         case 'Logout':
             $result = Logout();
             echo json_encode( $result );
+            break;
+
+        case 'reservedForm':
+            $result = reservedForm();
+            echo json_encode( $result[0] );
             break;
 
         case 'createRep':

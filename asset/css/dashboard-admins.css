@@ -496,3 +496,9 @@ table.vitamins tfoot td {
     border-color: #b75633 !important;
     background: rgba(183, 86, 51, 0.35);
 }
+
+/*List customer class=badge*/
+.badge{
+    color: #fff;
+    background-color: #b75633;
+}

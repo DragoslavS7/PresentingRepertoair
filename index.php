@@ -12,9 +12,6 @@ if (! isset($_GET['page']))
         case 'home':
             include('parts/home.php');
             break;
-        case 'profile':
-            include('parts/profile.php');
-            break;
         case 'repertoir':
             include('parts/repertoir.php');
             break;

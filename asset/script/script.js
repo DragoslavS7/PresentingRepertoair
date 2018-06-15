@@ -171,6 +171,70 @@
 
  }
 
+ function reservedHen() {
+
+    $('#reservedBtn').on('click',function(e){
+        e.preventDefault();
+        $.ajax({
+            url: '../request.php',
+            method: 'POST',
+            data: {
+                'Title': $('#Title').val(),
+                'firstName': $('#firstName').val(),
+                'lastName': $('#lastName').val(),
+                'username': $('#username').val(),
+                'email': $('#email').val(),
+                'address': $('#address').val(),
+                'address2': $('#address2').val(),
+                'country': $('#country').val(),
+                'state': $('#state').val(),
+                'zip': $('#zip').val(),
+                'tik_s': $('#tik_s').val(),
+                'p':'reservedForm'
+            },
+            success: function (response) {
+                if(response.success == "OK"){
+                        swal({
+                            title: 'Success',
+                            text: "Are you sure you want to get out?",
+                            type: 'success',
+                            showCancelButton: true
+                        }).then(function () {
+                            $.ajax({
+                                url: '../request.php',
+                                method: 'POST',
+                                data: {
+                                    'p': 'sendEmail'
+                                },
+                                success: function (response) {
+                                    console.log(response);
+                                }
+                            });
+                        },function(dismiss) {
+                            if (dismiss === 'cancel') {
+                                swal(
+                                    'cancel',
+                                    'Thank you :)',
+                                    'error'
+                                )
+                            }
+                        });
+                }else{
+                    swal({
+                        type: 'warning',
+                        title: 'Oops...',
+                        text: 'Invalid fields!'
+                    });
+                }
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    });
+
+ }
+
 
 $(document).ready(function () {
    curoselItem();
@@ -178,6 +242,7 @@ $(document).ready(function () {
    Logout();
    CreateRepertoair();
    fileHeandler();
+   reservedHen();
 });
 
 

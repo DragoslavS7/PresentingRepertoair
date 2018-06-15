@@ -38,14 +38,13 @@
                 <img src="../asset/img/iconsSVG.png" width="70%">
                 <li><a href="new-repertoair.php"><span class="entypo-rocket"></span><span class="menu-item">Create</span></a></li>
                 <li><a href="tables-repertoair.php"><span class="entypo-archive"></span><span class="menu-item">Tables</span></a></li>
-                <li><a href="stats-repertoir.php"><span class="entypo-briefcase"></span><span class="menu-item">Statistics</span></a></li>
                 <li><a href="custom-repertoair.php"><span class="entypo-user"></span><span class="menu-item">Customer</span></a></li>
-                <li class="has-sub"><a href="#"><span class="entypo-battery"></span><span class="menu-item">T</span></a>
+                <!--<li class="has-sub"><a href="#"><span class="entypo-battery"></span><span class="menu-item">T</span></a>
                 </li>
                 <ul class="subnav">
                     <li><a href="#"><span class="entypo-right-open"></span> <span>T1</span></a></li>
                     <li><a href="#"><span class="entypo-right-open"></span> <span>T2</span></a></li>
-                </ul>
+                </ul>-->
             </ul>
         </nav>
     </aside>

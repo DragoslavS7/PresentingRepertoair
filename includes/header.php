@@ -51,24 +51,21 @@
                     <a class="nav-link active" id="pills-home-tab"  href="?page=home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="pills-profile-tab" href="?page=profile" data-toggle="pill" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
-                </li>
-                <li class="nav-item">
 
-                    <a class="nav-link" id="pills-repertoir-tab" href="?page=repertoir" data-toggle="pill" role="tab" aria-controls="pills-contact" aria-selected="false">Repertoir</a>
+                    <a class="nav-link" id="pills-repertoir-tab" href="?page=repertoir" role="tab" aria-controls="pills-repertoir" aria-selected="false">Repertoir</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="pills-contact-tab" href="?page=contact" data-toggle="pill" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
+                    <a class="nav-link" id="pills-contact-tab" href="?page=contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="pills-contact-tab" href="?page=reserve" data-toggle="pill" role="tab" aria-controls="pills-contact" aria-selected="false">Reserve</a>
+                    <a class="nav-link" id="pills-reserve-tab" href="?page=reserve" role="tab" aria-controls="pills-reserve" aria-selected="false">Reserve</a>
                 </li>
-                <li class="nav-item dropdown">
+                <!--<li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="pills-login-tab"  href="#" role="tab" aria-controls="pills-contact" aria-selected="false"><i class="fa fa-user"></i></a>
                     <ul class="dropdown-menu">
                         <li><a class="nav-link" href="?page=Login">Login</a></li>
                     </ul>
-                </li>
+                </li>-->
             </ul>
         </div>
 
