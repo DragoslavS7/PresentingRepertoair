@@ -27,7 +27,7 @@
     </div><a class="left carousel-control" href="#demo-carousel" role="button" data-slide="prev"><span class="icon-prev" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#demo-carousel" role="button" data-slide="next"><span class="icon-next" aria-hidden="true"></span><span class="sr-only">Next</span></a>
 </div>
 
-<div class="sc-box animated infinite bounce">
+<div class="sc-box ">
     <div class="row text-center">
         <div class="col-12 small">
             <img src="asset/img/iconsSVG.png" width="10%">

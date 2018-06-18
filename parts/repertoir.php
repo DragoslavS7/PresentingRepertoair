@@ -12,11 +12,11 @@
     <div class="row">
         <?php if($table->num_rows > 0): ?>
         <?php while ($r = $table->fetch_assoc()):
-            $image =substr($r['file'], strlen('c:\fakepath'));
+            $image = substr($r['file'], strlen('c:\fakepath'));
         ?>
         <div class="col-6 col-md-4">
             <div class="text-center">
-                <a href="?page=reserve"><img src="uploads/<?php echo $image; ?>" width="50%" class="rounded mx-auto d-block" alt="...">
+                <a href="?page=reserve"><img class="img-fluid img-thumbnail" src="uploads<?php echo $image; ?>" width="50%" class="rounded mx-auto d-block" alt="...">
                 <h4><?php echo $r['title'] ?></h4></a>
                 <div><?php echo $r['description'] ?></div>
                 <small><?php echo $r['dateOf'].' : '.$r['dateTo'] ?></small>

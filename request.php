@@ -5,10 +5,12 @@ ini_set('display_errors', 1);
 header('Content-type: application/json; charset=utf-8');
 define("INFLEX", true);
 require_once('includes/database.php');
-require_once('asset/phpmailer/PHPMailerAutoload.php');
 
-function sendEmail($email,$fullName,$subject)
+
+function sendEmail($email,$fullName,$subject,$body)
 {
+
+    require_once('asset/phpmailer/PHPMailerAutoload.php');
 
     $act = 'sendEmail';
     $res = array();
@@ -26,29 +28,68 @@ function sendEmail($email,$fullName,$subject)
     $mail->Password = '07071993';
     $mail->SetFrom($email);
     $mail->FromName = $fullName;
-    $mail->addAddress("gagipredojevic65@gmail.com", "Recepient Name");
-    $mail->AddReplyTo('gagipredojevic65@gmail.com');
+    $mail->SMTPOptions = array(
+        'ssl' => array(
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true
+        )
+    );
+    $mail->addAddress($email, $fullName);
     $mail->Subject = $subject;
-    $mail->AddEmbeddedImage('assets/img/facebook.svg', 'logo_2');
-    $mail->AddEmbeddedImage('assets/img/google-plus.svg', 'logo_fb');
-    $mail->AddEmbeddedImage('assets/img/instagram.svg', 'logo_gp');
-    $mail->AddEmbeddedImage('assets/img/linkedin.svg', 'logo_li');
-    $mail->AddEmbeddedImage('assets/img/twitter.svg', 'logo_tw');
-    $mail->AddEmbeddedImage('assets/img/youtube.svg', 'logo_fw');
-    $mail->Body ='test';
-    $mail->send();
-    /*if(!$mail->send())
+    $mail->Body = $body;
+    $mail->AltBody = 'This is a plain-text message body';
+    $files = '/var/www/PresentingRepertoir/uploads/';
+
+    if (is_dir($files) && $dh = opendir($files)) {
+        while (($file = readdir($dh)) !== false) {
+            if (!is_dir($file) && $file !== "thumbnail") {
+                $mimetype = mime_content_type($files.$file);
+                $mail->addAttachment($files.$file, $file, 'base64', $mimetype);
+            }
+        }
+    }
+    if(!$mail->send())
     {
         $r = returnError($act, "Mailer Error: " . $mail->ErrorInfo, 400 );
         array_push( $res, $r );
-    }
-    else
-    {
+    } else {
         $r = success($act,"OK",200);
         array_push( $res, $r );
-    }*/
+    }
 
-    return $mail;
+    return $res;
+}
+
+function HtmlBody()
+{
+
+    ob_start();
+
+    global $db;
+
+    $stms = $db->query("SELECT `title`, `fname`, `lname`, `user`, `email`, `address`, `address2`, `country`, `state`, `zip`, `tikets`, `date` FROM `Reserved` ORDER BY `title`, `fname`, `lname`, `user`, `email`, `address`, `address2`, `country`, `state`, `zip`, `tikets`, `date`");
+
+    if($stms->num_rows > 0){
+        while($rep = $stms->fetch_assoc()){
+            if ( is_file( 'secondaryLinks/mail.php' ) ) require_once 'secondaryLinks/mail.php';
+        }
+    }
+
+
+    return ob_get_clean();
+
+}
+
+function HtmlAfterFix()
+{
+
+    ob_start();
+
+        if ( is_file( 'includes/emailFix.php' ) ) require_once 'includes/emailFix.php';
+
+    return ob_get_clean();
+
 }
 
 function Login(){
@@ -220,7 +261,10 @@ if ( isset( $_POST ) && isset( $_POST[ 'p' ] ) ) {
             break;
 
         case 'sendEmail':
-            $result = sendEmail('gagipredojevic65@gmail.com', 'Dragoslav Predojevic','Presenting Repertoair');
+            $after = HtmlAfterFix();
+            $body = HtmlBody();
+            $result = sendEmail('gagipredojevic65@gmail.com', 'Dragoslav Predojevic','Presenting Repertoair',$body.$after);
             echo json_encode($result);
+            break;
     }
 }
