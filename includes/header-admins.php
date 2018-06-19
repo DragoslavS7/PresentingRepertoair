@@ -1,3 +1,12 @@
+<?php
+define("INFLEX", true);
+require_once('../includes/database.php');
+session_start();
+if (!isset($_SESSION['admin'])){
+    header('location: ../?page=Login');
+    die();
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -26,7 +35,7 @@
                 <div class="name">Dragoslav Predojevic<span class="entypo-down-open"></span></div>
                 <div class="drop">
                     <ul>
-                        <li><a class="finish"><span class="entypo-login"></span><span class="menu-item">Logout</span></li>
+                        <li><a  class="finish btn btn-outline-dark"><span class="entypo-login"></span>Logout</a></li>
                     </ul>
                 </div>
             </div>

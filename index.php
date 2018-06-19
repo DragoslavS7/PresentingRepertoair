@@ -1,6 +1,14 @@
 <?php
 require('includes/header.php');
 
+define("INFLEX", true);
+require_once('includes/database.php');
+session_start();
+if(isset($_SESSION['admin'])){
+    header('Location: admins/new-repertoair.php');
+    die();
+}
+
 if (! isset($_GET['page']))
 {
     include('parts/home.php');

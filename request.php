@@ -1,10 +1,19 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+ini_set('session.cookie_lifetime',1);
+ini_set('session.cookie_httponly',1);
+ini_set('session.use_strict_mod',1);
 
 header('Content-type: application/json; charset=utf-8');
 define("INFLEX", true);
 require_once('includes/database.php');
+
+$lifetime= 3600;
+session_set_cookie_params ($lifetime);
+if(!isset($_SESSION))session_start();
+setcookie(session_name(),session_id(),time() + $lifetime);
+session_regenerate_id();
 
 
 function sendEmail($email,$fullName,$subject,$body)
@@ -110,8 +119,10 @@ function Login(){
 
 
         if ($stmt->num_rows > 0) {
-           $r = success($act,"OK",200);
-           if ( ! in_array( $r, $res ) ) array_push( $res, $r );
+            $_SESSION['admin'] = $email;
+            $_SESSION['admin'] = $password;
+            $r = success($act,"OK",200);
+            if ( ! in_array( $r, $res ) ) array_push( $res, $r );
 
         } else {
            $r = returnError($act, 'Invalid email/password', 400 );
@@ -124,12 +135,6 @@ function Login(){
        if ( ! in_array( $r, $res ) ) array_push( $res, $r );
     }
 
-    return $res;
-}
-
-function Logout(){
-    $res =  array();
-    header("location: ../?page=Login");
     return $res;
 }
 
@@ -214,22 +219,49 @@ function reservedForm(){
 }
 
 
-if ( ! empty( $_GET[ 'p' ] ) &&  $_GET[ 'p' ] == 'file' ) {
+if (!empty($_GET['p'])) {
+    switch ($_GET['p']) {
+        default:
+            break;
 
-    $act = 'SendFile';
-    $res = array();
+        case 'file':
+            $act = 'SendFile';
+            $res = array();
 
-    if( !empty($_FILES['file']) && $_FILES['file']['error'] == 0){
+            $allowed = array('png', 'jpg', 'gif');
+            if (!empty($_FILES['file']) && $_FILES['file']['error'] == 0) {
 
-        if(move_uploaded_file($_FILES['file']['tmp_name'], 'uploads/'.basename($_FILES['file']['name']))){
-            $r = success($act,"OK",200);
-            if ( ! in_array( $r, $res ) ) array_push( $res, $r );
-        }
+                $extension = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
+                if (!in_array(strtolower($extension), $allowed)) {
+                    $r = returnError($act, 'Errors!', 400);
+                    if (!in_array($r, $res)) array_push($res, $r);
+                }
 
+                if (move_uploaded_file($_FILES['file']['tmp_name'], 'uploads/' . basename($_FILES['file']['name']))) {
+                    $r = success($act, "OK", 200);
+                    if (!in_array($r, $res)) array_push($res, $r);
+                }
+
+            }
+            echo json_encode($res);
+
+            break;
+
+        case 'logout':
+            $res = array();
+
+            if(isset($_SESSION["admin"]))
+            {
+                unset($_SESSION["admin"]);
+                session_destroy();
+            }else{
+                $r = returnError('Logout', 'Errors!', 400);
+                if (!in_array($r, $res)) array_push($res, $r);
+            }
+
+            echo json_encode($res);
+            break;
     }
-
-    echo json_encode($res);
-
 }
 
 
@@ -243,11 +275,6 @@ if ( isset( $_POST ) && isset( $_POST[ 'p' ] ) ) {
         case 'Login':
             $result = Login();
             echo json_encode( $result[0] );
-            break;
-
-        case 'Logout':
-            $result = Logout();
-            echo json_encode( $result );
             break;
 
         case 'reservedForm':

@@ -65,31 +65,32 @@
 
  function Logout () {
 
-     $('.finish').on('click', function(e) {
+     $('.finish').click( function(e) {
          e.preventDefault();
          $.ajax({
-             url: '../request.php',
-             method: "POST",
-             data:{
-               'p':'Logout'
+             url: '../request.php?p=logout',
+             method: 'GET',
+             success: function(data){
+                 console.log(data);
+                  swal({
+                      title: 'Close',
+                      text: "Are you sure you want to get out?",
+                      type: 'warning',
+                      showCancelButton: true
+                  }).then(function () {
+                      window.location.href = '?page=Login';
+                  },function(dismiss) {
+                      if (dismiss === 'cancel') {
+                          swal(
+                              'cancel',
+                              'Thank you :)',
+                              'error'
+                          )
+                      }
+                  });
              },
-             success: function(response){
-                 swal({
-                     title: 'Close',
-                     text: "Are you sure you want to get out?",
-                     type: 'warning',
-                     showCancelButton: true
-                 }).then(function () {
-                     window.location.href = '../?page=Login';
-                 },function(dismiss) {
-                     if (dismiss === 'cancel') {
-                         swal(
-                             'cancel',
-                             'Thank you :)',
-                             'error'
-                         )
-                     }
-                 });
+             error: function (error) {
+                 console.log(error);
              }
          });
      });

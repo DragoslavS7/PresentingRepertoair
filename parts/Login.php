@@ -1,4 +1,3 @@
-
 <div class="sc-box">
     <form class="form-signin" method="POST" action="#">
         <h2 class="form-signin-heading text-center animated infinite swing">Please sign in</h2>

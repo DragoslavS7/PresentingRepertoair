@@ -1,9 +1,10 @@
 <?php require_once "../includes/header-admins.php"; ?>
-    <section class="main-content" <?php define("INFLEX", true); ?>  >
+    <div class="main-content" <?php define("INFLEX", true); ?>  >
         <div class="container" <?php if ( file_exists( '../includes/database.php' ) ) include_once '../includes/database.php'; ?> >
             <div class="sc-box">
                 <h3 class="animated infinite bounceIn">Customer</h3>
-
+            </div>
+            <div class="sc-box">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item text-left">
                         <div class="row">
@@ -42,5 +43,5 @@
 
             </div>
         </div>
-    </section>
+    </div>
 <?php require_once "../includes/footer-admins.php"; ?>

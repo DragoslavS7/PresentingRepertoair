@@ -1,8 +1,10 @@
 <?php require_once "../includes/header-admins.php"; ?>
-<section class="main-content"  <?php define("INFLEX", true); ?> >
+<div class="main-content"  <?php define("INFLEX", true); ?> >
     <div class="container" <?php if ( file_exists( '../includes/database.php' ) ) include_once '../includes/database.php'; ?> >
         <div class="sc-box">
             <h3 class="animated infinite bounceIn">Table of existing repertoires</h3>
+        </div>
+        <div class="sc-box">
             <div class="row">
                 <div class="col-12">
                     <table class="vitamins table table-striped table-bordered" id="example" style="width:100%">
@@ -38,5 +40,5 @@
             </div>
         </div>
     </div>
-</section>
+</div>
 <?php require_once "../includes/footer-admins.php"; ?>

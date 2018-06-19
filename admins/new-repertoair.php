@@ -1,8 +1,10 @@
 <?php require_once "../includes/header-admins.php"; ?>
-<section class="main-content">
+<div class="main-content">
     <div class="container">
         <div class="sc-box">
             <h3 class="animated infinite bounceIn">Create new repertoair</h3>
+        </div>
+        <div class="sc-box">
             <form method="POST" action="#">
                 <div class="row">
                     <div class="col-md-4">
@@ -49,5 +51,5 @@
             </form>
         </div>
     </div>
-</section>
+</div>
 <?php require_once "../includes/footer-admins.php"; ?>
