@@ -1,7 +1,28 @@
 
-
-<footer class="sc-footer bg-dark text-white mt-4 ">
-    <div class="container-fluid py-3">
+<div class="sc-box" >
+    <div class="row">
+        <div class="col-md-2">
+            <img src="../asset/img/foot1.png" alt="foot_1">
+        </div>
+        <div class="col-md-2">
+            <img src="../asset/img/foot2.png" alt="foot_2">
+        </div>
+        <div class="col-md-2">
+            <img src="../asset/img/foot3.png" alt="foot_3">
+        </div>
+        <div class="col-md-2">
+            <img src="../asset/img/foot4.png" alt="foot_4">
+        </div>
+        <div class="col-md-2">
+            <img src="../asset/img/foot5.png" alt="foot_5">
+        </div>
+        <div class="col-md-2">
+            <img src="../asset/img/foot6.png" alt="foot_6">
+        </div>
+    </div>
+</div>
+<footer class="sc-footer text-white mt-3" id="footer">
+    <div class="container-fluid py-2">
         <div class="row">
             <div class="col-md-12">
                 Presenting Repertoir

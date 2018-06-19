@@ -237,6 +237,9 @@
  }
 
 
+
+
+
 $(document).ready(function () {
    curoselItem();
    loginForm();
@@ -244,6 +247,50 @@ $(document).ready(function () {
    CreateRepertoair();
    fileHeandler();
    reservedHen();
+
+   var date = new Date();
+   var mins = date.getMinutes();
+   var head_first = $('.head_first');
+   var foot = $('#footer');
+   var btn_col = $('.btn_col');
+   var box = $('.box1');
+
+    function ChangeColor (mins){
+        if (mins % 4 === 0){
+            head_first.removeClass('').css("background", "rgba(54, 52, 53, 0.9)");
+            foot.css("background", "rgba(54, 52, 53, 0.9)");
+            btn_col.css("background", "rgba(54, 52, 53, 0.8)");
+            box.css("background", "rgba(54, 52, 53, 0.7)");
+        }else if (mins % 3 === 0){
+            head_first.css("background", "rgba(141, 41, 41, 0.9)");
+            foot.css("background", "rgba(141, 41, 41, 0.9)");
+            btn_col.css("background", "rgba(141, 41, 41, 0.8)");
+            box.css("background", "rgba(141, 41, 41, 0.7)");
+        }else if (mins % 2 === 0){
+            head_first.css("background", "rgba(0, 109, 148, 0.9)");
+            foot.css("background", "rgba(0, 109, 148, 0.9)");
+            btn_col.css("background", "rgba(0, 109, 148, 0.8)");
+            box.css("background", "rgba(0, 109, 148, 0.7)");
+        }else{
+            head_first.css("background", "rgba(0, 107, 63, 0.9)");
+            foot.css("background", "rgba(0, 107, 63, 0.9)");
+            btn_col.css("background", "rgba(0, 107, 63, 0.8)");
+            box.css("background", "rgba(0, 107, 63, 0.7)");
+        }
+    }
+
+    ChangeColor(mins);
+
+    setInterval(function () {
+        mins++;
+        ChangeColor(mins);
+    }, 60000)
+
+    $('#myList a').on('click', function (e) {
+        e.preventDefault();
+        $(this).tab('show')
+    })
+
 });
 
 

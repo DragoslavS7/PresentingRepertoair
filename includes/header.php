@@ -35,40 +35,42 @@
 
 </head>
 
-<body>
+<body class="back_col">
 
 <div class="container">
-    <nav class="navbar navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </nav>
+    <div class = "head_first">
+        <nav class="navbar navbar-dark ">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
 
-    <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-dark p-4">
-            <ul class="nav nav-pills nav-fill" id="pills-tab" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" id="pills-home-tab"  href="?page=home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
-                </li>
-                <li class="nav-item">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class=" p-4">
+                <ul class="nav nav-pills nav-fill" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-home-tab"  href="?page=home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+                    </li>
+                    <li class="nav-item">
 
-                    <a class="nav-link" id="pills-repertoir-tab" href="?page=repertoir" role="tab" aria-controls="pills-repertoir" aria-selected="false">Repertoir</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="pills-contact-tab" href="?page=contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="pills-reserve-tab" href="?page=reserve" role="tab" aria-controls="pills-reserve" aria-selected="false">Reserve</a>
-                </li>
-                <!--<li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="pills-login-tab"  href="#" role="tab" aria-controls="pills-contact" aria-selected="false"><i class="fa fa-user"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="?page=Login">Login</a></li>
-                    </ul>
-                </li>-->
-            </ul>
+                        <a class="nav-link" id="pills-repertoir-tab" href="?page=repertoir" role="tab" aria-controls="pills-repertoir" aria-selected="false">Repertoir</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-contact-tab" href="?page=contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-reserve-tab" href="?page=reserve" role="tab" aria-controls="pills-reserve" aria-selected="false">Reserve</a>
+                    </li>
+                    <!--<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="pills-login-tab"  href="#" role="tab" aria-controls="pills-contact" aria-selected="false"><i class="fa fa-user"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="nav-link" href="?page=Login">Login</a></li>
+                        </ul>
+                    </li>-->
+                </ul>
+            </div>
+
         </div>
-
     </div>
 
 

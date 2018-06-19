@@ -16,12 +16,12 @@
                 <h3 class="d-none d-lg-block d-xl-block">Phone</h3>
                 <p class="d-none d-lg-block d-xl-block">+381695013001</p></a>
         </div>
-        <div class="col-4 box2 pt-4">
+        <div class="col-4 box1 pt-4">
             <a href=""><i class="fas fa-home fa-3x"></i>
                 <h3 class="d-none d-lg-block d-xl-block">Address</h3>
                 <p class="d-none d-lg-block d-xl-block">Ignjata Pavlasa, 4 i 8, 21000,  Novi Sad</p></a>
         </div>
-        <div class="col-4 box3 pt-4">
+        <div class="col-4 box1 pt-4">
             <a href="mailto:test@test.com"><i class="fas fa-envelope fa-3x"></i>
                 <h3 class="d-none d-lg-block d-xl-block">E-mail</h3>
                 <p class="d-none d-lg-block d-xl-block">gagi.predojevic93@hotmail.com</p></a>

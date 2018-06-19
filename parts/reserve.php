@@ -122,7 +122,7 @@
 
 
                 <hr class="mb-4">
-                <button class="btn btn-default btn-lg btn-block" id="reservedBtn" name="reservedBtn" type="submit">Continue to checkout</button>
+                <button class="btn btn_col btn-lg btn-block" id="reservedBtn" name="reservedBtn" type="submit">Continue to checkout</button>
             </form>
         </div>
     </div>

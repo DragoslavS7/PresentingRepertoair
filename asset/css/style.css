@@ -8,7 +8,13 @@ body{
     line-height: 1.382;
     color: #333;
     -webkit-overflow-scrolling: touch;
-    background-color: #f4f4f4;
+    background: url("../img/background.jpg") center;
+    font-weight: 400;
+    margin: 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
 
 /*
@@ -28,7 +34,7 @@ body{
     background: #b75633;
 }
 a{
-    color:#b75633;
+    color:#fff;
 }
 
 .sc-footer {
@@ -37,7 +43,7 @@ a{
 
 
 .sc-box{
-    background:#fff;
+    background:rgba(242, 245, 249,.9);
     margin-top:15px;
     padding-left: 5rem;
     padding-right: 5rem;
@@ -65,4 +71,16 @@ a{
     margin: 0 auto;
 }
 
+.list-group-item.active{
+    background: rgba(44,62,80,.7);
+    border-color: rgba(44,62,80,.7);
+}
 
+.col_crud{
+    background: rgba(44,62,80,.7);
+}
+
+.card-header{
+    background: #fff;
+    padding:0;
+}

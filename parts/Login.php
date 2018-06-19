@@ -10,6 +10,6 @@
                 <input type="checkbox" id="check-rememb" name="check-rememb" value="remember-me"> Remember me
             </label>
         </div>
-        <button class="btn btn-lg btn-dark btn-block" id="sub-login" name = "sub-login" type="submit">Sign in</button>
+        <button class="btn btn-lg btn_col btn-block" id="sub-login" name = "sub-login" type="submit">Sign in</button>
     </form>
 </div>
