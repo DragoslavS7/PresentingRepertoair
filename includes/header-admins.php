@@ -35,7 +35,8 @@ if (!isset($_SESSION['admin'])){
                 <div class="name">Dragoslav Predojevic<span class="entypo-down-open"></span></div>
                 <div class="drop">
                     <ul>
-                        <li><a  class="finish btn btn-outline-dark"><span class="entypo-login"></span>Logout</a></li>
+                        <li><a  class="finish btn btn-outline-dark mb-2"><span class="entypo-login"></span>Logout</a></li>
+                        <li><a href="../?page=home" class="btn btn-outline-dark">Customer</a></li>
                     </ul>
                 </div>
             </div>

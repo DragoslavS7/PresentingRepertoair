@@ -10,7 +10,6 @@
 <div class="sc-box">
     <div class="row" >
         <div class="col-md-12 order-md-1">
-            <form method="POST" action="#">
                 <div class="row">
                     <div class="col-md-12 mb-3">
                         <label for="Title">Title</label>
@@ -46,7 +45,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="email">Email <span class="text-muted">(Optional)</span></label>
+                    <label for="email">Email </label>
                     <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
                     <div class="invalid-feedback">
                         Please enter a valid email address for shipping updates.
@@ -62,7 +61,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
+                    <label for="address2">Address 2 </label>
                     <input type="text" class="form-control" id="address2" name="address2" placeholder="Apartment or suite">
                 </div>
 
@@ -111,19 +110,17 @@
                         </div>
                     </div>
                 </div>
-
-
                 <h4 class="mb-3 text-center">Payment</h4>
                 <hr class="mb-4">
                 <div class="d-block my-3">
-                    <!-- TODO payment-->
+
+
+
                 </div>
-
-
 
                 <hr class="mb-4">
                 <button class="btn btn_col btn-lg btn-block" id="reservedBtn" name="reservedBtn" type="submit">Continue to checkout</button>
-            </form>
+
         </div>
     </div>
 

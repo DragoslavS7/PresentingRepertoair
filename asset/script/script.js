@@ -237,9 +237,6 @@
  }
 
 
-
-
-
 $(document).ready(function () {
    curoselItem();
    loginForm();
@@ -284,12 +281,12 @@ $(document).ready(function () {
     setInterval(function () {
         mins++;
         ChangeColor(mins);
-    }, 60000)
+    }, 60000);
 
     $('#myList a').on('click', function (e) {
         e.preventDefault();
         $(this).tab('show')
-    })
+    });
 
 });
 

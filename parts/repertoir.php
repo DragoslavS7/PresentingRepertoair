@@ -1,7 +1,7 @@
-
-<div class="sc-box" <?php define("INFLEX", true); ?> >
-    <div class="row text-center" <?php if ( file_exists( 'includes/database.php' ) ) include_once 'includes/database.php'; ?> >
-        <div class="col-12 small" <?php $table = $db->query("SELECT `title`, `dateOf`, `dateTo`, `description`, `file` FROM `CreateRep` ORDER BY `title`, `dateOf`, `dateTo`, `description`, `file`"); ?> >
+<?php $table = $db->query("SELECT `title`, `dateOf`, `dateTo`, `description`, `file` FROM `CreateRep` ORDER BY  `title`, `dateOf`, `dateTo`, `description`, `file`"); ?>
+<div class="sc-box">
+    <div class="row text-center">
+        <div class="col-12 small">
             <img src="asset/img/iconsSVG.png" width="10%">
         </div>
     </div>
@@ -28,6 +28,7 @@
         <?php endwhile; ?>
         <?php endif; ?>
     </div>
+
     <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
             <li class="page-item disabled">
@@ -41,4 +42,5 @@
             </li>
         </ul>
     </nav>
+
 </div>

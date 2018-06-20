@@ -13,20 +13,28 @@
     -moz-box-sizing:border-box;
 }
 
-body {
-    color: #797979;
-    background: #EEE;
-    font-family: 'Open Sans', sans-serif;
-    font-size:13px;
+body{
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 1.382;
+    color: #333;
     -webkit-overflow-scrolling: touch;
-    margin:0;
+    background: url("../img/background.jpg") center;
+    font-weight: 400;
+    width:100%;
+    margin: 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
-h3,h4,h5,h6 {
+h3 {
     text-align: center;
+    color:#fff;
 }
-
-
-/* Grid */
+label{
+    color:#fff;
+}
 
 * {
     box-sizing: border-box;
@@ -263,9 +271,9 @@ header .userpanel .drop:before {
     width: 100%;
     height:100%;
     display: inline-block;
-    margin-top: 55px;
+    margin-top: 85px;
     padding: 15px;
-    background:#EEE;
+    background:rgba(54, 52, 53, 0.8);
 }
 .nav-hover {
     width:150px;

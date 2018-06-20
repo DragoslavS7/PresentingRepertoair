@@ -1,6 +1,6 @@
 <footer>
     <div>
-        <h4>
+        <h4 class="text-center">
             <a href=""><span class="entypo-facebook-squared"></span></a>
             <a href=""><span class="entypo-pinterest-circled"></span></a>
             <a href=""><span class="entypo-linkedin-circled"></span></a>
@@ -9,7 +9,7 @@
             <a href=""><span class="entypo-paypal"></span></a>
 
         </h4>
-        <h6>
+        <h6 class="text-center">
             © <script>
                 document.write(new Date().getFullYear())
             </script> | Name author: Dragoslav Predojevic

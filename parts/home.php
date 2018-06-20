@@ -7,20 +7,20 @@
     </ol>
     <div class="carousel-inner" role="listbox">
         <div class="carousel-item active" data-src="https://unsplash.it/800/400?random=1">
-            <div class="carousel-caption">
-                <h3>Test caption 1</h3>
+            <div class="carousel-caption sc-box">
+                <h3>Welcome!</h3>
                 <p>Test caption description 1</p>
             </div>
         </div>
         <div class="carousel-item" data-src="https://unsplash.it/800/400?random=2">
-            <div class="carousel-caption">
-                <h3>Test caption 2</h3>
+            <div class="carousel-caption sc-box">
+                <h3>Welcome!</h3>
                 <p>Test caption description 2</p>
             </div>
         </div>
         <div class="carousel-item" data-src="https://unsplash.it/800/400?random=3">
-            <div class="carousel-caption">
-                <h3>Test caption 3</h3>
+            <div class="carousel-caption sc-box">
+                <h3>Welcome!</h3>
                 <p>Test caption description 3</p>
             </div>
         </div>
