@@ -94,6 +94,9 @@
     <?php if(isset($bootstrapJS) && $bootstrapJS): ?>
         <script src="asset/script/bootstrap/bootstrap.min.js"></script>
     <?php endif; ?>
+    <?php if(isset($bootstrapCHECK) && $bootstrapCHECK): ?>
+        <script src="asset/script/bootstrap/bootstrap-checkbox.min.js"></script>
+    <?php endif; ?>
     <?php if(isset($jasnyBootstrapJS) && $jasnyBootstrapJS): ?>
         <script src="asset/script/bootstrap/jasny-bootstrap.min.js"></script>
     <?php endif; ?>

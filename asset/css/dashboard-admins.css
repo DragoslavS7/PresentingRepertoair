@@ -509,4 +509,5 @@ table.vitamins tfoot td {
 .badge{
     color: #fff;
     background-color: #b75633;
+    width:8rem;
 }

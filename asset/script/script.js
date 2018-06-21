@@ -288,6 +288,7 @@ $(document).ready(function () {
         $(this).tab('show')
     });
 
+    $(':checkbox').checkboxpicker();
 });
 
 

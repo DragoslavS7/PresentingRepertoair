@@ -7,14 +7,17 @@
             <ul class="list-group list-group-flush">
                 <li class="list-group-item text-left">
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-4">
                             <b>First and last name</b>
                         </div>
-                        <div class="col-4">
+                        <div class="col-3">
                             <span class="badge">Title</span>
                         </div>
-                        <div class="col-2">
+                        <div class="col-3">
                             <span class="badge">Tikets</span>
+                        </div>
+                        <div class="col-2">
+                            <span class="badge">Yes/No</span>
                         </div>
                     </div>
                 </li>
@@ -25,14 +28,17 @@
                 ?>
                 <li class="list-group-item text-left">
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-4">
                             <?php echo $tb['fname'] . ' ' . $tb['lname']; ?>
                         </div>
-                        <div class="col-4">
+                        <div class="col-3">
                             <span class="badge"><?php echo $tb['title']; ?></span>
                         </div>
-                        <div class="col-2">
+                        <div class="col-3">
                             <span class="badge"><?php echo $tb['tikets']; ?></span>
+                        </div>
+                        <div class="col-2">
+                            <input type="checkbox" data-off-title="No" data-on-title="Yes">
                         </div>
                     </div>
                 </li>

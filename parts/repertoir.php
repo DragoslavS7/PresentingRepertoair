@@ -15,9 +15,9 @@
             $image = substr($r['file'], strlen('c:\fakepath'));
         ?>
         <div class="col-6 col-md-4 d-flex align-items-stretch">
-            <div class="card mb-4" style="width: 18rem;">
+            <div class="card mb-4 text-white border-dark   style="width: 18rem;">
                 <img class="card-img-top" src="uploads<?php echo $image; ?>" alt="Card image cap">
-                <div class="card-body">
+                <div class="card-body text-dark">
                     <h5 class="card-title"><?php echo $r['title']; ?></h5>
                     <p class="card-text"><?php echo $r['description']; ?></p>
                     <small class="card-text"><?php echo $r['dateOf'].' : '.$r['dateTo']; ?></small>

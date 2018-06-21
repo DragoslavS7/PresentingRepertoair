@@ -21,6 +21,7 @@
 </body>
 <script src="../asset/script/jquery-3.3.1.min.js"></script>
 <script src="../asset/script/bootstrap/jasny-bootstrap.min.js"></script>
+<script src="../asset/script/bootstrap/bootstrap-checkbox.min.js"></script>
 <script src="../asset/script/dataTables/jquery.dataTables.js"></script>
 <script src="../asset/script/dataTables/dataTables.bootstrap4.js"></script>
 <script src="../asset/script/swal/sweetalert2.js"></script>
