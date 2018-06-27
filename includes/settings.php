@@ -7,6 +7,7 @@ $fontAwesome = TRUE;
 $animateCss = TRUE;
 $bootstrap = TRUE;
 $styleCss = TRUE;
+$bootstrapCHECK = TRUE;
 
 $jQuery = TRUE;
 $bootstrapJS = TRUE;
