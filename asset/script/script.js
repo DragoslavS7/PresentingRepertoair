@@ -237,6 +237,7 @@
  }
 
 
+
 $(document).ready(function () {
    curoselItem();
    loginForm();

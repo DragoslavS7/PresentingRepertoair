@@ -15,7 +15,7 @@
             $image = substr($r['file'], strlen('c:\fakepath'));
         ?>
         <div class="col-6 col-md-4 d-flex align-items-stretch">
-            <div class="card mb-4 text-white border-dark   style="width: 18rem;">
+            <div class="card mb-4 text-white border-dark"   style="width: 18rem;">
                 <img class="card-img-top" src="uploads<?php echo $image; ?>" alt="Card image cap">
                 <div class="card-body text-dark">
                     <h5 class="card-title"><?php echo $r['title']; ?></h5>
@@ -28,19 +28,5 @@
         <?php endwhile; ?>
         <?php endif; ?>
     </div>
-
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-            <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1">Previous</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-            </li>
-        </ul>
-    </nav>
 
 </div>
