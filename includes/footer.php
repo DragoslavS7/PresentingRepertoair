@@ -20,6 +20,26 @@
             <img src="../asset/img/foot6.png" alt="foot_6">
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-2">
+            <img src="../asset/img/foot12.png" alt="foot_12">
+        </div>
+        <div class="col-md-2">
+            <img src="../asset/img/foot14.png" alt="foot_14">
+        </div>
+        <div class="col-md-2">
+            <img src="../asset/img/foot15.png" alt="foot_15">
+        </div>
+        <div class="col-md-2">
+            <img src="../asset/img/foot16.png" alt="foot_16">
+        </div>
+        <div class="col-md-2">
+            <img src="../asset/img/foot17.png" alt="foot_17">
+        </div>
+        <div class="col-md-2">
+            <img src="../asset/img/foot18.png" alt="foot_18">
+        </div>
+    </div>
 </div>
 <footer class="sc-footer text-white mt-3" id="footer">
     <div class="container-fluid py-2">

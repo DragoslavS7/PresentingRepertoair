@@ -43,6 +43,11 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="text-right">
+                <a href="?language_=en">English<img src="../asset/img/uk.png" width="54"></a>
+                <a href="?language_=srb">Serbian<img src="../asset/img/srb.png" width="54"></a>
+            </div>
+
         </nav>
 
         <div class="collapse" id="navbarToggleExternalContent">
@@ -60,6 +65,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="pills-reserve-tab" href="?page=reserve" role="tab" aria-controls="pills-reserve" aria-selected="false">Reserve</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-news-tab" href="?page=news" role="tab" aria-controls="pills-news" aria-selected="false">News</a>
                     </li>
                     <!--<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="pills-login-tab"  href="#" role="tab" aria-controls="pills-contact" aria-selected="false"><i class="fa fa-user"></i></a>

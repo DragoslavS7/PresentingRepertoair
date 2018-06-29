@@ -9,6 +9,21 @@ if(isset($_SESSION['admin'])){
     die();
 }
 
+
+if( !empty($_GET['language_'])) {
+    $lang = $_GET['language_'];
+    switch ($lang) {
+        case 'en':
+            require_once  'language/language_EN.php';
+            break;
+        case 'srb':
+            require_once  'language/language_SRB.php';
+            break;
+
+    }
+}
+
+
 if (! isset($_GET['page']))
 {
     include('parts/home.php');
@@ -28,6 +43,9 @@ if (! isset($_GET['page']))
             break;
         case 'reserve':
             include('parts/reserve.php');
+            break;
+        case 'news':
+            include('parts/news.php');
             break;
         case 'Login':
             include('parts/Login.php');
