@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 
+<?php  $sr = (isset($lang) && $lang == 'en')? 'en' : 'srb'; ?>
+
 <head <?php require_once 'settings.php'; ?> >
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="asset/img/iconsSVG.png" />

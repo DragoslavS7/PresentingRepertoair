@@ -1,6 +1,6 @@
 <?php
 
-$lang_SRB = array(
+$lang = array(
     'lang' => 'srb',
     'nav' => array(
         'title1' => array(
@@ -159,5 +159,5 @@ $lang_SRB = array(
 );
 ?>
 <script>
-    console.log(<?php echo json_encode($lang_SRB, JSON_PRETTY_PRINT); ?>);
+    console.log(<?php echo json_encode($lang, JSON_PRETTY_PRINT); ?>);
 </script>

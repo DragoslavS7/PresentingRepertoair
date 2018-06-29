@@ -1,15 +1,4 @@
 <?php
-require('includes/header.php');
-
-define("INFLEX", true);
-require_once('includes/database.php');
-session_start();
-if(isset($_SESSION['admin'])){
-    header('Location: admins/new-repertoair.php');
-    die();
-}
-
-
 if( !empty($_GET['language_'])) {
     $lang = $_GET['language_'];
     switch ($lang) {
@@ -21,6 +10,16 @@ if( !empty($_GET['language_'])) {
             break;
 
     }
+}
+
+require('includes/header.php');
+
+define("INFLEX", true);
+require_once('includes/database.php');
+session_start();
+if(isset($_SESSION['admin'])){
+    header('Location: admins/new-repertoair.php');
+    die();
 }
 
 

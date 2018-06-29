@@ -1,6 +1,6 @@
 <?php
 
-$lang_En = array(
+$lang = array(
     'lang' => 'en',
     'nav' => array(
         'title1' => array(
@@ -159,5 +159,5 @@ $lang_En = array(
 );
 ?>
 <script>
-console.log(<?php echo json_encode($lang_En, JSON_PRETTY_PRINT); ?>);
+console.log(<?php echo json_encode($lang, JSON_PRETTY_PRINT); ?>);
 </script>
