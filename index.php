@@ -1,17 +1,19 @@
 <?php
-define("INFLEX", true);
-require_once('includes/database.php');
-session_start();
-
-require('includes/header.php');
-
-if(isset($_SESSION['admin'])){
-    header('Location: admins/new-repertoair.php');
-    die();
-}
 
 if (isset($_GET['page']) && isset($_GET['language_']) && !empty($_GET['page']) && !empty($_GET['language_']))
 {
+
+    define("INFLEX", true);
+    require_once('includes/database.php');
+    session_start();
+
+    require('includes/header.php');
+
+    if(isset($_SESSION['admin'])){
+        header('Location: admins/new-repertoair.php');
+        die();
+    }
+
     $page = $_GET['page'];
     switch($page)
     {
@@ -37,12 +39,13 @@ if (isset($_GET['page']) && isset($_GET['language_']) && !empty($_GET['page']) &
             include('secondaryLinks/history.php');
             break;
     }
+    require("includes/footer.php");
 
 } else {
 
     include('parts/404.php');
 
 }
-require("includes/footer.php");
+
 
 ?>
