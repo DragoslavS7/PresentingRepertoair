@@ -12,27 +12,27 @@ $lang = array(
                     'desc1'     => 'Test caption description 2',
                     'desc2'     => 'Test caption description 3'
                 ),
-                'titleForPage'  =>  'About Us',
+                'titleForPage'  =>  'O nama',
                 'history' => array(
-                    'his'               =>  'History',
+                    'his'               =>  'Istorija',
                     'hisBtn'            =>  'History...',
-                    'descriptions1'     =>  'The Youth Theater was founded in 1932 as a Puppet Theater, as part of “Sokolsko Drustvo” – public association in Novi Sad. The theater developed from the association’s section of puppeteers, which was founded in 1930, with the great support of Sokol’s Elders Dr Vladimir Belajcic and Dr Ignjat Pavlas.',
+                    'descriptions1'     =>  'Позориште младих основано је 1932. године као Луткарско позориште, у склопу "Соколског друштва" - јавног удружења у Новом Саду. Позориште се развило из асоцијације лутака, која је основана 1930. године, уз велику подршку Соколових стараца др Владимирја Белајчића и др Игњата Павла.',
 
-                    'descriptions2'     =>  'Dr Lazar Dragic, later the first head of the Puppet Theater, was first sent to Ljubljana, Slovenia for a puppet course. The first big, movable stage, the very first 11 puppets and the play to be performed – all arrived from Ljubljana. The stage was mounted in the building of “Matica srpska”, the rehearsals were held in the  rooms of “Sokolsko Drustvo” and the first performance “The Prince from the Underworld” was performed with great excitement.',
+                    'descriptions2'     =>  'Др Лазар Драгић, касније први руководилац Луткарског позоришта, први пут је послат у Љубљану у Словенију за луткарски курс. Прва велика, покретна сцена, првих 11 лутака и представа која се изводе - све су стигле из Љубљане. Сцена је монтирана у згради "Матице српске", пробе су одржане у просторијама "Соколског друштва", а са великим узбуђењем је изведен први наступ "Принц из подземља".',
 
-                    'descriptions3'     =>  'The Puppet Theatre got its own building in 1936, the memorial house “King Alexander I”, a magnificent and modern building designed by renowned architect Djordje Tabakovic. The hall had 166 seats and a new stage.',
+                    'descriptions3'     =>  'Луткарско позориште добило је своју зграду 1936. године, спомен кућу "Краљ Александар И", величанствена и модерна зграда коју је дизајнирао реномирани архитекта Ђорђе Табаковић. Сала је имала 166 места и нову позорницу.',
 
-                    'descriptions4'     =>  'During the Second World War, the Theater did not work and suffered great damage – puppets, stage sets and costumes were destroyed or stolen.',
+                    'descriptions4'     =>  'Током Другог светског рата, Позорница није радила и претрпјела велику штету - уништене или украдене лутке, сценски сетови и костиме.',
 
-                    'descriptions5'     =>  'It opened under the name of the Vojvodina Puppet Theater immediately after the end of the war, but with great difficulty when Zarko Vasiljevic, the head of Vojvodina’s National Theater at that time, came to aid. There was a change of name to the City Puppet Theater, then the Puppet Theater when finally in 1968 the theater got its present name.',
+                    'descriptions5'     =>  'Отворено је под називом Позориште лутака Војводине одмах по завршетку рата, али је са великим потешкоћама дошао на помоћ Жарко Васиљевић, шеф војвођанског Народног позоришта у то вријеме. Промењено је име Градског луткарског позоришта, затим Луткарско позориште, када је коначно 1968. године позориште добило своје садашње име.',
 
-                    'descriptions6'     =>  'The Youth Theater is the first puppet theater in Serbia and Vojvodina.',
+                    'descriptions6'     =>  'Позориште младих је прво луткарско позориште у Србији и Војводини.',
 
-                    'descriptions7'     =>  'Evening stage, later named Drama stage, started to run in 1991. Since then there are two stages at the Youth Theater: Children’s Stage and Drama Stage.',
+                    'descriptions7'     =>  'Вечерња сцена, касније под називом Драмска сцена, почела је да ради 1991. године. Од тада постоје две позорнице у Позоришту младих: Дечја сцена и драмска сцена.',
 
-                    'descriptions8'     =>  'For more than eight decades the Theatre has staged more than 300 titles, performed over 20,000 plays that have been seen by nearly 3 million people.',
+                    'descriptions8'     =>  'Већ више од осам деценија Театар је поставио више од 300 наслова, изводио преко 20.000 представа које су видели скоро 3 милиона људи.',
 
-                    'descriptions9'     =>  'For its work, the Youth Theater has received numerous awards and prizes in domestic, regional and republic as well as international competitions and festivals.',
+                    'descriptions9'     =>  'За свој рад, Позориште младих добило је бројне награде и награде на домаћем, регионалном и републичком, као и међународним такмичењима и фестивалима.',
                 ),
                 'secLinks' => array(
                     'sec1'  => 'Seat plan',
@@ -71,9 +71,9 @@ $lang = array(
         'title3' => array(
             'titleC'      =>  'Kontakt',
             'links'       =>  array(
-                'titlePage'   =>  'Contact',
-                'li_p'  =>  'Phone',
-                'li_a'  =>  'Address',
+                'titlePage'   =>  'Kontakt',
+                'li_p'  =>  'Telefon',
+                'li_a'  =>  'Adresa',
                 'li_m'  =>  'E-mail',
             ),
         ),
@@ -158,6 +158,3 @@ $lang = array(
 
 );
 ?>
-<script>
-    console.log(<?php echo json_encode($lang, JSON_PRETTY_PRINT); ?>);
-</script>

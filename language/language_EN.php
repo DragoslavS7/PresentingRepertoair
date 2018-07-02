@@ -158,6 +158,3 @@ $lang = array(
 
 );
 ?>
-<script>
-console.log(<?php echo json_encode($lang, JSON_PRETTY_PRINT); ?>);
-</script>

@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html>
-
-<?php  $sr = (isset($lang) && $lang == 'en')? 'en' : 'srb'; ?>
+<?php
+if( !empty($_GET['language_'])): $lang = $_GET['language_'];
+    switch ($lang):
+    case 'en':
+        include  'language/language_EN.php';
+    break;
+    case 'srb':
+        include  'language/language_SRB.php';
+    break;
+    endswitch;
+endif;
+?>
 
 <head <?php require_once 'settings.php'; ?> >
     <meta charset="utf-8" />
@@ -38,7 +48,6 @@
 </head>
 
 <body class="back_col">
-
 <div class="container">
     <div class = "head_first">
         <nav class="navbar navbar-dark ">
@@ -46,8 +55,8 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="text-right">
-                <a href="?language_=en">English<img src="../asset/img/uk.png" width="54"></a>
-                <a href="?language_=srb">Serbian<img src="../asset/img/srb.png" width="54"></a>
+                <a href="?page=<?php echo $_GET['page']; ?>&language_=en">English<img src="../asset/img/uk.png" width="54"></a>
+                <a href="?page=<?php echo $_GET['page']; ?>&language_=srb">Serbian<img src="../asset/img/srb.png" width="54"></a>
             </div>
 
         </nav>
@@ -56,25 +65,25 @@
             <div class=" p-4">
                 <ul class="nav nav-pills nav-fill" id="pills-tab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="pills-home-tab"  href="?page=home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+                        <a class="nav-link active" id="pills-home-tab"  href="?page=home&language_=<?php echo $_GET['language_'] ?>" role="tab" aria-controls="pills-home" aria-selected="true"><?php echo $lang['nav']['title1']['titleH']; ?></a>
                     </li>
                     <li class="nav-item">
 
-                        <a class="nav-link" id="pills-repertoir-tab" href="?page=repertoir" role="tab" aria-controls="pills-repertoir" aria-selected="false">Repertoir</a>
+                        <a class="nav-link" id="pills-repertoir-tab" href="?page=repertoir&language_=<?php echo $_GET['language_'] ?>" role="tab" aria-controls="pills-repertoir" aria-selected="false"><?php echo $lang['nav']['title2']['titleR']; ?></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="pills-contact-tab" href="?page=contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
+                        <a class="nav-link" id="pills-contact-tab" href="?page=contact&language_=<?php echo $_GET['language_'] ?>" role="tab" aria-controls="pills-contact" aria-selected="false"><?php echo $lang['nav']['title3']['titleC']; ?></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="pills-reserve-tab" href="?page=reserve" role="tab" aria-controls="pills-reserve" aria-selected="false">Reserve</a>
+                        <a class="nav-link" id="pills-reserve-tab" href="?page=reserve&language_=<?php echo $_GET['language_'] ?>" role="tab" aria-controls="pills-reserve" aria-selected="false"><?php echo $lang['nav']['title4']['titleR']; ?></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="pills-news-tab" href="?page=news" role="tab" aria-controls="pills-news" aria-selected="false">News</a>
+                        <a class="nav-link" id="pills-news-tab" href="?page=news&language_=<?php echo $_GET['language_'] ?>" role="tab" aria-controls="pills-news" aria-selected="false"><?php echo $lang['nav']['title5']['titleN']; ?></a>
                     </li>
                     <!--<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="pills-login-tab"  href="#" role="tab" aria-controls="pills-contact" aria-selected="false"><i class="fa fa-user"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="?page=Login">Login</a></li>
+                            <li><a class="nav-link" href="?page=Login&language_=<?php //echo $_GET['language_'] ?>">Login</a></li>
                         </ul>
                     </li>-->
                 </ul>

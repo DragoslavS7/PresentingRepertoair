@@ -247,14 +247,6 @@ if (!empty($_GET['p'])) {
             echo json_encode($res);
 
             break;
-        case 'lang':
-            if ( !empty($_GET['language']) ) {
-                $_COOKIE['language'] = $_GET['language'] === 'en' ? 'en' : 'srb';
-            } else {
-                $_COOKIE['language'] = 'srb';
-            }
-            setcookie('language', $_COOKIE['lang']);
-            break;
 
         case 'logout':
             $res = array();

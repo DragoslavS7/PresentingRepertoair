@@ -1,33 +1,17 @@
 <?php
-if( !empty($_GET['language_'])) {
-    $lang = $_GET['language_'];
-    switch ($lang) {
-        case 'en':
-            require_once  'language/language_EN.php';
-            break;
-        case 'srb':
-            require_once  'language/language_SRB.php';
-            break;
-
-    }
-}
-
-require('includes/header.php');
-
 define("INFLEX", true);
 require_once('includes/database.php');
 session_start();
+
+require('includes/header.php');
+
 if(isset($_SESSION['admin'])){
     header('Location: admins/new-repertoair.php');
     die();
 }
 
-
-if (! isset($_GET['page']))
+if (isset($_GET['page']) && isset($_GET['language_']) && !empty($_GET['page']) && !empty($_GET['language_']))
 {
-    include('parts/home.php');
-
-} else {
     $page = $_GET['page'];
     switch($page)
     {
@@ -53,6 +37,11 @@ if (! isset($_GET['page']))
             include('secondaryLinks/history.php');
             break;
     }
+
+} else {
+
+    include('parts/404.php');
+
 }
 require("includes/footer.php");
 

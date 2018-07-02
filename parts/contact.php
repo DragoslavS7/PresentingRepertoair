@@ -4,7 +4,7 @@
             <img src="asset/img/iconsSVG.png" width="10%">
         </div>
     </div>
-    <h2 class="text-center animated infinite bounce">Contact</h2>
+    <h2 class="text-center animated infinite bounce"><?php echo $lang['nav']['title3']['links']['titlePage'];  ?></h2>
 </div>
 <div class="sc-box ">
     <div class="row">
@@ -13,17 +13,17 @@
     <div class="row text-center">
         <div class="col-4 box1 pt-4">
             <a href="tel:+123456789"><i class="fas fa-phone fa-3x"></i>
-                <h3 class="d-none d-lg-block d-xl-block">Phone</h3>
+                <h3 class="d-none d-lg-block d-xl-block"><?php echo $lang['nav']['title3']['links']['li_p'];  ?></h3>
                 <p class="d-none d-lg-block d-xl-block">+381695013001</p></a>
         </div>
         <div class="col-4 box1 pt-4">
             <a href=""><i class="fas fa-home fa-3x"></i>
-                <h3 class="d-none d-lg-block d-xl-block">Address</h3>
+                <h3 class="d-none d-lg-block d-xl-block"><?php echo $lang['nav']['title3']['links']['li_a'];  ?></h3>
                 <p class="d-none d-lg-block d-xl-block">Ignjata Pavlasa, 4 i 8, 21000,  Novi Sad</p></a>
         </div>
         <div class="col-4 box1 pt-4">
             <a href="mailto:test@test.com"><i class="fas fa-envelope fa-3x"></i>
-                <h3 class="d-none d-lg-block d-xl-block">E-mail</h3>
+                <h3 class="d-none d-lg-block d-xl-block"><?php echo $lang['nav']['title3']['links']['li_m'];  ?></h3>
                 <p class="d-none d-lg-block d-xl-block">gagi.predojevic93@hotmail.com</p></a>
         </div>
     </div>
