@@ -3,7 +3,7 @@ define("INFLEX", true);
 require_once('../includes/database.php');
 session_start();
 if (!isset($_SESSION['admin'])){
-    header('location: ../?page=Login');
+    header('location: ../?page=Login&language_=srb');
     die();
 }
 ?>
@@ -44,6 +44,7 @@ if (!isset($_SESSION['admin'])){
     </header>
     <aside>
         <nav role='navigation'>
+
             <ul>
                 <img src="../asset/img/iconsSVG.png" width="70%">
                 <li><a href="new-repertoair.php"><span class="entypo-rocket"></span><span class="menu-item">Create</span></a></li>
