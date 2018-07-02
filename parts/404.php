@@ -16,7 +16,7 @@
 <div class="error">
     <div class="container-floud">
         <div class="col-xs-12 ground-color text-center">
-            <div class="container-error-404">
+            <div class="container-error-404 back404">
                 <div class="clip"><div class="shadow"><span class="digit thirdDigit"></span></div></div>
                 <div class="clip"><div class="shadow"><span class="digit secondDigit"></span></div></div>
                 <div class="clip"><div class="shadow"><span class="digit firstDigit"></span></div></div>
@@ -27,7 +27,9 @@
     </div>
 </div>
 <!-- Error Page -->
+<script src="../asset/script/jquery-3.3.1.min.js"></script>
 <script src="../asset/script/bootstrap/bootstrap.min.js"></script>
+<script src="../asset/script/script.js"></script>
 <script src="../asset/script/404.js"></script>
 </body>
 </html>

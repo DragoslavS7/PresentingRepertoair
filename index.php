@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_GET['page']) && isset($_GET['language_']) && !empty($_GET['page']) && !empty($_GET['language_']))
+if (isset($_GET['page']) && isset($_GET['language_']) && !empty($_GET['page']) && !empty($_GET['language_']) && $_GET['language_'] == 'en' || $_GET['language_'] == 'srb' )
 {
 
     define("INFLEX", true);

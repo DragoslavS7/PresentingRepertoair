@@ -253,6 +253,7 @@ $(document).ready(function () {
    var foot = $('#footer');
    var btn_col = $('.btn_col');
    var box = $('.box1');
+   var back404 = $('.back404');
 
     function ChangeColor (mins){
         if (mins % 4 === 0){
@@ -260,21 +261,25 @@ $(document).ready(function () {
             foot.css("background", "rgba(54, 52, 53, 0.9)");
             btn_col.css("background", "rgba(54, 52, 53, 0.8)");
             box.css("background", "rgba(54, 52, 53, 0.7)");
+            back404.css("background", "rgba(54, 52, 53, 0.8)");
         }else if (mins % 3 === 0){
             head_first.css("background", "rgba(141, 41, 41, 0.9)");
             foot.css("background", "rgba(141, 41, 41, 0.9)");
             btn_col.css("background", "rgba(141, 41, 41, 0.8)");
             box.css("background", "rgba(141, 41, 41, 0.7)");
+            back404.css("background", "rgba(141, 41, 41, 0.8)");
         }else if (mins % 2 === 0){
             head_first.css("background", "rgba(0, 109, 148, 0.9)");
             foot.css("background", "rgba(0, 109, 148, 0.9)");
             btn_col.css("background", "rgba(0, 109, 148, 0.8)");
             box.css("background", "rgba(0, 109, 148, 0.7)");
+            back404.css("background", "rgba(0, 109, 148, 0.7)");
         }else{
             head_first.css("background", "rgba(0, 107, 63, 0.9)");
             foot.css("background", "rgba(0, 107, 63, 0.9)");
             btn_col.css("background", "rgba(0, 107, 63, 0.8)");
             box.css("background", "rgba(0, 107, 63, 0.7)");
+            back404.css("background", "rgba(0, 107, 63, 0.8)");
         }
     }
 
