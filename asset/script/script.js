@@ -67,6 +67,7 @@
 
      $('.finish').click( function(e) {
          e.preventDefault();
+
          $.ajax({
              url: '../request.php?p=logout',
              method: 'GET',
@@ -78,7 +79,7 @@
                       type: 'warning',
                       showCancelButton: true
                   }).then(function () {
-                      window.location.href = '?page=Login';
+                      window.location.href = '../?page=Login&language_=srb';
                   },function(dismiss) {
                       if (dismiss === 'cancel') {
                           swal(

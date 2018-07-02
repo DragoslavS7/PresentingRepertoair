@@ -58,7 +58,6 @@ endif;
                 <a href="?page=<?php echo $_GET['page']; ?>&language_=en">English<img src="../asset/img/uk.png" width="54"></a>
                 <a href="?page=<?php echo $_GET['page']; ?>&language_=srb">Serbian<img src="../asset/img/srb.png" width="54"></a>
             </div>
-
         </nav>
 
         <div class="collapse" id="navbarToggleExternalContent">

@@ -47,5 +47,3 @@ if (isset($_GET['page']) && isset($_GET['language_']) && !empty($_GET['page']) &
 
 }
 
-
-?>
