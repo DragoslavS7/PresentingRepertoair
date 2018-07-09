@@ -3,8 +3,12 @@ function randomNum()
     "use strict";
     return Math.floor(Math.random() * 9)+1;
 }
-var loop1,loop2,loop3,time=30, i=0, number, selector3 = document.querySelector('.thirdDigit'), selector2 = document.querySelector('.secondDigit'),
-    selector1 = document.querySelector('.firstDigit');
+var loop1,loop2,loop3,time=30;
+var i=0;
+var number, selector3 = document.querySelector('.thirdDigit');
+var selector2 = document.querySelector('.secondDigit');
+var selector1 = document.querySelector('.firstDigit');
+
 loop3 = setInterval(function()
 {
     "use strict";
@@ -18,6 +22,7 @@ loop3 = setInterval(function()
         i++;
     }
 }, time);
+
 loop2 = setInterval(function()
 {
     "use strict";
@@ -31,6 +36,7 @@ loop2 = setInterval(function()
         i++;
     }
 }, time);
+
 loop1 = setInterval(function()
 {
     "use strict";
